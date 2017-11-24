@@ -13,7 +13,6 @@ export class CoursesComponent implements OnInit {
   primaryBtn:boolean= true;
   eventStatus:String="";
   counter:number=0;
-
   courses:Array<String>;
 
   constructor(service: CoursesServcie) {
@@ -27,7 +26,6 @@ export class CoursesComponent implements OnInit {
    keyPressed($event){
     this.eventStatus="Key Pressed : ".concat($event.keyCode);
    }
-   
 
   ngOnInit() {
   }
