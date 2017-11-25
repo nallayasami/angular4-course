@@ -1,5 +1,6 @@
 import { CoursesServcie } from './courses.service';
 import { Component, OnInit } from '@angular/core';
+import { CourseItem } from '../courseItem.eum';
 
 @Component({
   selector: 'app-courses',
@@ -15,6 +16,15 @@ export class CoursesComponent implements OnInit {
   emailId: String;
   counter = 0;
   courses: Array<String>;
+  selection: CourseItem = CourseItem.Pipes;
+
+  pipesObject: Object = {
+    numberValue: 12548,
+    stringValue: 'Test the bigger String with multiple char',
+    date: new Date(),
+    decimalVal: 124.4557,
+    stringLimit: 10
+  };
 
   constructor(service: CoursesServcie) {
     this.courses = service.getCourses();
@@ -31,7 +41,7 @@ export class CoursesComponent implements OnInit {
   enterKeyPressed() {
     this.eventStatus = 'Key Filter event : '.concat('Enter');
   }
-  templateVariable(input){
+  templateVariable(input) {
     this.eventStatus = 'Template vaieable.value : '.concat(input);
   }
 

@@ -5,28 +5,25 @@
       <small>Play ground</small>
     </h1>
   </div>
-
   <div>
-
     <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
       <ul class="nav nav-pills nav-stacked">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Bindings</a>
+        <li class="nav-item" [class.active]="selection == 1">
+          <a class="nav-link" href="#" (click)="selection=1">Bindings</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Reports</a>
+        <li class="nav-item" [class.active]="selection == 2">
+          <a class="nav-link" href="#" (click)="selection=2">Pipes</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Analytics</a>
+        <li class="nav-item" [class.active]="selection == 3">
+          <a class="nav-link" href="#" (click)="selection=3">Reusable Components</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Export</a>
+        <li class="nav-item" [class.active]="selection == 4">
+          <a class="nav-link" href="#" (click)="selection=4">Directives</a>
         </li>
       </ul>
     </div>
-
-    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-      <div class="panel panel-default">
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" [class.hidden]="selection != 1">
+      <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title">Property Binding(value, class and style)</h3>
         </div>
@@ -44,7 +41,7 @@
               </div>
               <div class="col-sm-3"></div>
               <span class="label label-info">{{emailId}}</span>
-              
+
             </div>
 
           </div>
@@ -58,7 +55,7 @@
           </div>
         </div>
       </div>
-      <div class="panel panel-default">
+      <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title">Event Binding</h3>
         </div>
@@ -84,7 +81,7 @@
           </div>
         </div>
       </div>
-      <div class="panel panel-default">
+      <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title" data-toggle="collapse" href="#collapse1">Template Variable Binding</h3>
         </div>
@@ -100,6 +97,52 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" [class.hidden]="selection != 2">
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Sample built in pipes</h3>
+        </div>
+        <div class="panel-body">
+          <span class="label label-default col-md-2">UpperCasePipe</span>
+          <span class="label label-success col-md-10">{{pipesObject.stringValue | uppercase }}</span>
+          <span class="label label-default col-md-2">LowerCasePipeChained</span>
+          <span class="label label-success col-md-10">{{pipesObject.stringValue | uppercase | lowercase }}</span>
+          <span class="label label-default col-md-2">NumberPipe</span>
+          <span class="label label-success col-md-10">{{pipesObject.numberValue|number}}</span>
+          <span class="label label-default col-md-2">DecimalPipe</span>
+          <span class="label label-success col-md-10">{{pipesObject.decimalVal|number:'3.10-10'}}</span>
+          <span class="label label-default col-md-2">CurrencyPipe</span>
+          <span class="label label-success col-md-10">{{pipesObject.decimalVal|currency:'EUR':true}}</span>
+          <span class="label label-default col-md-2">DatePipe</span>
+          <span class="label label-success col-md-10">{{pipesObject.date|date:'shortDate'}}</span>
+        </div>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Custom Pipes</h3>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label for="input_string" class="col-sm-2 control-label">StringInput:</label>
+            <div class="col-sm-10">
+              <input type="text" name="" id="input_string" class="form-control" [(ngModel)]="pipesObject.stringValue" required="required"
+                pattern="" title="">
+            </div>
+            <label for="input_subStringLimit" class="col-sm-2 control-label">SubStringLimit:</label>
+            <div class="col-sm-10">
+              <input type="text" name="" id="input_subStringLimit" class="form-control" [(ngModel)]="pipesObject.stringLimit" required="required"
+                pattern="" title="">
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <span class="label label-default">output:</span>
+          <span class="label label-success">{{pipesObject.stringValue | custom:pipesObject.stringLimit}}</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

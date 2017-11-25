@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseComponent } from './course/course.component';
+import { CustomPipe } from './custom.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloWorldComponent,
     CoursesComponent,
-    CourseComponent
+    CourseComponent,
+    CustomPipe
   ],
   imports: [
     BrowserModule,
