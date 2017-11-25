@@ -1,9 +1,11 @@
 <div class="container-fluid">
-  
+
   <div class="page-header">
-    <h1>Angular !!! <small>Development mode</small></h1>
+    <h1>Angular !!!
+      <small>Play ground</small>
+    </h1>
   </div>
-  
+
   <div>
 
     <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
@@ -28,42 +30,74 @@
         <div class="panel-heading">
           <h3 class="panel-title">Property Binding(value, class and style)</h3>
         </div>
-        <div class="panel-body">
-          <h2>{{title}} with *ngFor</h2>
-          <ul class="list-group">
-            <!-- Intrapolation {{}}-->
-            <li class="list-group-item" *ngFor="let course of courses">{{course}}</li>
-          </ul>
-        </div>
-        <div class="panel-footer">
-          <!-- one way property binding -->
-          <button type="button" class="btn btn-sm" [textContent]="buttonStr"></button>
-          <!-- class binding class.<<Style class name>> -->
-          <button type="button" class="btn btn-sm" [class.btn-primary]="primaryBtn">Class Biniding</button>
-          <!-- class binding Style binding (DOM css property) -->
-          <button type="button" class="btn btn-sm" [style.backgroundColor]="primaryBtn?'green':'blue'">Style Biniding</button>
+        <div class="panel-collapse">
+          <div class="panel-body">
+            <h2>{{title}} with *ngFor</h2>
+            <ul class="list-group">
+              <!-- Intrapolation {{}}-->
+              <li class="list-group-item" *ngFor="let course of courses">{{course}}</li>
+            </ul>
+            <div class="form-group">
+              <label for="input_two_way_binding" class="col-sm-2 control-label">TwoWaybinding:</label>
+              <div class="col-sm-10">
+                <input type="email" name="" id="input_two_way_binding" class="form-control" [(ngModel)]="emailId" required="required" title="">
+              </div>
+              <div class="col-sm-3"></div>
+              <span class="label label-info">{{emailId}}</span>
+              
+            </div>
+
+          </div>
+          <div class="panel-footer">
+            <!-- one way property binding -->
+            <button type="button" class="btn btn-sm" [textContent]="buttonStr"></button>
+            <!-- class binding class.<<Style class name>> -->
+            <button type="button" class="btn btn-sm" [class.btn-primary]="primaryBtn">Class Biniding</button>
+            <!-- class binding Style binding (DOM css property) -->
+            <button type="button" class="btn btn-sm" [style.backgroundColor]="primaryBtn?'green':'blue'">Style Biniding</button>
+          </div>
         </div>
       </div>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Event Binding</h3>
         </div>
-        <div class="panel-body">
-          <div class="form-group">
-            <label for="input_EventBinding" class="col-sm-2 control-label">key up Event:</label>
-            <div class="col-sm-10">
-              <input type="text" name="" id="input_EventBinding" class="form-control" value="" required="required" (keyup)="keyPressed($event)">
-            </div>
+        <div class="panel-collapse">
+          <div class="panel-body">
             <div class="form-group">
-              <label for="event_status" class="col-sm-2 control-label">Event Status</label>
+              <label for="input_EventBinding" class="col-sm-2 control-label">keyUPEvent:</label>
+              <div class="col-sm-10">
+                <input type="text" name="" id="input_EventBinding" class="form-control" value="" required="required" (keyup)="keyPressed($event)">
+              </div>
+              <label for="input_EventFilering" class="col-sm-2 control-label">keyFilterEvent:</label>
+              <div class="col-sm-10">
+                <input type="text" name="" id="input_EventFilering" class="form-control" value="" required="required" (keyup.enter)="enterKeyPressed()">
+              </div>
+              <label for="event_status" class="col-sm-2 control-label">EventStatus</label>
               <div class="col-sm-10">
                 <input type="tel" name="" id="event_status" class="form-control" [value]="eventStatus" required="required" disabled="disabled">
               </div>
             </div>
           </div>
+          <div class="panel-footer">
+            <button type="button" class="btn btn-sm " (click)="btnClicked()">Trigger Event</button>
+          </div>
         </div>
-        <div class="panel-footer">
-          <button type="button" class="btn btn-sm " (click)="btnClicked()">Trigger Event</button>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title" data-toggle="collapse" href="#collapse1">Template Variable Binding</h3>
+        </div>
+        <!-- Template bindig referes to an dom object helpful to simplify the code-->
+        <div class="panel-collapse">
+          <div class="panel-body">
+            <div class="form-group">
+              <label for="Template_binding" class="col-sm-2 control-label">keyUPEvent:</label>
+              <div class="col-sm-10">
+                <input type="text" name="" #inputVal id="input_TempBinding" class="form-control" value="" required="required" (keyup.enter)="templateVariable(inputVal.value)">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
