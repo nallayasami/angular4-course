@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Favorite component status</h3>
+  </div>
+  <div class="panel-body">
+    <div class="media">
+      <a class="pull-left" href="#">
+        <span class="glyphicon" [class.glyphicon-star]="isFavorite" [class.glyphicon-star-empty]="!isFavorite" (click)="toggleFavorite()">
+        </span>
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">Favorite Icon</h4>
+        <p>Current status: {{ isFavorite }}</p>
+      </div>
+    </div>
+  </div>
+</div>

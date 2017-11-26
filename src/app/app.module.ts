@@ -8,6 +8,9 @@ import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseComponent } from './course/course.component';
 import { CustomPipe } from './custom.pipe';
+import { FavoriteComponent } from './favorite/favorite.component';
+import { LikeComponent } from './like/like.component';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { CustomPipe } from './custom.pipe';
     HelloWorldComponent,
     CoursesComponent,
     CourseComponent,
-    CustomPipe
+    CustomPipe,
+    FavoriteComponent,
+    LikeComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,8 @@
 import { CoursesServcie } from './courses.service';
 import { Component, OnInit } from '@angular/core';
 import { CourseItem } from '../courseItem.eum';
+import { FavoriteComponentArgs } from '../favorite/favorite.component';
+import { LikeComponentArgs, LikeComponent } from '../like/like.component';
 
 @Component({
   selector: 'app-courses',
@@ -16,7 +18,10 @@ export class CoursesComponent implements OnInit {
   emailId: String;
   counter = 0;
   courses: Array<String>;
-  selection: CourseItem = CourseItem.Pipes;
+  selection: CourseItem = CourseItem.ReusableComponent;
+
+  reusableComponent: FavoriteComponentArgs = { isFavorite: false };
+  likeComponent: LikeComponentArgs = { isLiked: true, likeCount: 10 };
 
   pipesObject: Object = {
     numberValue: 12548,
@@ -43,6 +48,15 @@ export class CoursesComponent implements OnInit {
   }
   templateVariable(input) {
     this.eventStatus = 'Template vaieable.value : '.concat(input);
+  }
+
+  isFavoriteChanged(changeEvent: FavoriteComponentArgs) {
+    this.reusableComponent = changeEvent;
+  }
+
+  likeBtnCliked($event: LikeComponentArgs) {
+    console.log($event);
+    this.likeComponent = $event;
   }
 
   ngOnInit() {
