@@ -1,0 +1,57 @@
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>head1</th>
+      <th>head2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>val1</td>
+      <td [colSpan]="colSpan">val2</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Binding</h3>
+  </div>
+  <div class="panel-body">
+    <div class="form-group">
+      <label for="input_StringValue" class="col-sm-2 control-label">StringValue:</label>
+      <div class="col-sm-10">
+        <input type="text" #strInput name="" id="input_StringValue" class="form-control" [value]="stringVal" (keyup.enter)="keyPressed(strInput.value)"
+          required="required" pattern="" title="">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="input_StringValue_TW" class="col-sm-2 control-label">StringValue_TW:</label>
+      <div class="col-sm-10">
+        <input type="text" name="" id="input_StringValue_TW" class="form-control" [(ngModel)]="stringVal" required="required" pattern=""
+          title="">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">Class binding</div>
+  <div class="panel-body">
+    <div class="panel-footer">
+      <button type="button" class="btn" [class.btn-success]="isSuccess" [class.btn-info]="!isSuccess" (click)="onClick()">
+        Submit
+      </button>
+      <button type="button" class="btn btn.info" [style.backgroundColor]="isSuccess?'green':'pink'" (click)="onClick()">
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
+<p>
+  {{stringVal}}
+</p>

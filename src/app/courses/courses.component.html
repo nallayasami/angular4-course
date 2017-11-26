@@ -29,11 +29,6 @@
         </div>
         <div class="panel-collapse">
           <div class="panel-body">
-            <h2>{{title}} with *ngFor</h2>
-            <ul class="list-group">
-              <!-- Intrapolation {{}}-->
-              <li class="list-group-item" *ngFor="let course of courses">{{course}}</li>
-            </ul>
             <div class="form-group">
               <label for="input_two_way_binding" class="col-sm-2 control-label">TwoWaybinding:</label>
               <div class="col-sm-10">
@@ -194,7 +189,20 @@
         <ng-container class="header">ng-content wiht ng-container</ng-container>
         <ng-container class="body">ng-content + ng-container with css selcctor</ng-container>
       </app-content>
-
+    </div>
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" [class.hidden]="selection != 4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Inbuilt Directives</h3>
+        </div>
+        <div class="panel-body">
+          <h2>{{title}} with *ngFor</h2>
+          <ul class="list-group">
+            <!-- Intrapolation {{}}-->
+            <li class="list-group-item" *ngFor="let course of courses">{{course}}</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>

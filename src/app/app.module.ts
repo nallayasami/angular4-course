@@ -11,6 +11,7 @@ import { CustomPipe } from './custom.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { LikeComponent } from './like/like.component';
 import { ContentComponent } from './content/content.component';
+import { BindingComponent } from './binding/binding.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ContentComponent } from './content/content.component';
     CustomPipe,
     FavoriteComponent,
     LikeComponent,
-    ContentComponent
+    ContentComponent,
+    BindingComponent
   ],
   imports: [
     BrowserModule,
