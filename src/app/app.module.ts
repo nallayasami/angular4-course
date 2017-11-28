@@ -12,6 +12,8 @@ import { FavoriteComponent } from './favorite/favorite.component';
 import { LikeComponent } from './like/like.component';
 import { ContentComponent } from './content/content.component';
 import { BindingComponent } from './binding/binding.component';
+import { ShowOrHideComponent } from './show-or-hide/show-or-hide.component';
+import { InterationComponent } from './interation/interation.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { BindingComponent } from './binding/binding.component';
     FavoriteComponent,
     LikeComponent,
     ContentComponent,
-    BindingComponent
+    BindingComponent,
+    ShowOrHideComponent,
+    InterationComponent
   ],
   imports: [
     BrowserModule,

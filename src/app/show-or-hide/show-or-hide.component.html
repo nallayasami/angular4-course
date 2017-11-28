@@ -1,0 +1,46 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">*ngIf vs Hidden</h3>
+  </div>
+  <div class="panel-body">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" [(ngModel)]="isSelected"> Selection
+      </label>
+    </div>
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Option 1: div with *ngIf</div>
+        <div class="panel-body">
+          <div *ngIf="isSelected">
+            <span class="label label-info">Content form NgIf block</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Option 2: with ng-tempalte and template variable</div>
+        <div class="panel-body">
+          <div *ngIf="isSelected; then ifBlock else elseBlock"></div>
+          <ng-template #ifBlock>
+            <span class="label label-info">Content form NgIf if block</span>
+          </ng-template>
+          <ng-template #elseBlock>
+            <span class="label label-info">Content form NgIf else block</span>
+          </ng-template>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Option 3: using hidden attribute</div>
+        <div class="panel-body">
+          <div [hidden]="isSelected">
+            <span class="label label-info">Content form hidden block</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
