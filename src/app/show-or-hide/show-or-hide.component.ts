@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowOrHideComponent implements OnInit {
 
-  isVisible = true;
+  isSelected = true;
 
   constructor() { }
 

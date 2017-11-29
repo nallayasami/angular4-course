@@ -23,7 +23,7 @@ export class CoursesComponent implements OnInit {
   reusableComponent: FavoriteComponentArgs = { isFavorite: false };
   likeComponent: LikeComponentArgs = { isLiked: true, likeCount: 10 };
 
-  pipesObject: Object = {
+  pipesObject: any = {
     numberValue: 12548,
     stringValue: 'Test the bigger String with multiple char',
     date: new Date(),

@@ -1,0 +1,6 @@
+{
+	"/angular": {
+		"target": "http://localhost:9090/angular1",
+		"secure": false
+	}
+}
