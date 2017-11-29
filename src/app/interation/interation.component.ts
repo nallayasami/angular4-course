@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { CoursesServcie } from '../courses/courses.service';
 
 @Component({
@@ -7,12 +7,24 @@ import { CoursesServcie } from '../courses/courses.service';
   styleUrls: ['./interation.component.css']
 })
 export class InterationComponent implements OnInit {
-  courses: Array<String>;
+  courses: Array<any>;
 
-  constructor(service: CoursesServcie) {
+  constructor(private service: CoursesServcie) {
     this.courses = service.getCourses();
   }
   ngOnInit() {
   }
 
+  trackByMethod(index, item) {
+    return item ? item.id : undefined;
+  }
+
+  resetData() {
+    this.courses = this.service.getCourses();
+  }
+
+  delete(course) {
+    let index = this.courses.indexOf(course)
+    this.courses.splice(index, 1);
+  }
 }

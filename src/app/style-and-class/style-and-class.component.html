@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    ngStyle and ngClass
+  </div>
+  <div class="panel-body">
+    class and style binding replaced with ngclass and ngstyle
+  </div>
+  <div class="panel-footer">
+    <button type="button" class="btn btn-sm" (click)="primaryBtn=!primaryBtn">Toggle</button>
+    <button type="button" class="btn btn-sm" [ngClass]="{
+          'btn-primary':primaryBtn,
+          'btn-info':!primaryBtn}">Class Biniding</button>
+    <button type="button" class="btn btn-sm" [ngStyle]="{'backgroundColor':primaryBtn?'green':'yellow'}">Style Biniding</button>
+  </div>
+</div>

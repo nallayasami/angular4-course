@@ -1,12 +1,17 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
-      <h3 class="panel-title">*ngFor</h3>
+      <h3 class="panel-title">*ngFor with index</h3>
     </div>
     <div class="panel-body">
       <h2>Courses List with *ngFor</h2>
       <ul class="list-group">
         <!-- Intrapolation {{}}-->
-        <li class="list-group-item" *ngFor="let course of courses">{{course}}</li>
+        <li class="list-group-item" *ngFor="let course of courses;index as i;trackBy:trackByMethod">{{i+1}} : {{course.name}}
+          <button type="button" class="btn btn-default" (click)="delete(course)">Delete</button>
+        </li>
       </ul>
+    </div>
+    <div class="panel-footer">
+      <button type="button" class="btn btn-large btn-block btn-info" (click)="resetData()">Reset for trackBy method</button>
     </div>
   </div>

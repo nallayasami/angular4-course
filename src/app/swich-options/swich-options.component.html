@@ -1,0 +1,27 @@
+<div class="panel panel-primary" >
+  <div class="panel-heading">
+    <h3 class="panel-title">*ngSwitchcase</h3>
+  </div>
+  <div class="panel-body">
+
+    <ul class="nav navbar-nav nav-pills">
+      <li [class.active]="currentMode == 'home'">
+        <a (click)="currentMode = 'home'">Home</a>
+      </li>
+      <li [class.active]="currentMode == 'link'">
+        <a (click)="currentMode = 'link'">Link</a>
+      </li>
+    </ul>
+  </div>
+  <div [ngSwitch]="currentMode">
+    <div *ngSwitchCase="'home'" class="panel-body">
+      Content for Home tab
+    </div>
+    <div *ngSwitchCase="'link'" class="panel-body">
+      Content for Link tab
+    </div>
+    <div *ngSwitchDefault class="panel-body">
+      Default: No tab selected
+    </div>
+  </div>
+</div>
