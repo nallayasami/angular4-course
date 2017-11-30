@@ -18,7 +18,7 @@ export class CoursesComponent implements OnInit {
   emailId: String;
   counter = 0;
   courses: Array<String>;
-  selection: CourseItem = CourseItem.Directives ;
+  selection: CourseItem = CourseItem.Directives;
 
   reusableComponent: FavoriteComponentArgs = { isFavorite: false };
   likeComponent: LikeComponentArgs = { isLiked: true, likeCount: 10 };
@@ -57,6 +57,9 @@ export class CoursesComponent implements OnInit {
   likeBtnCliked($event: LikeComponentArgs) {
     console.log($event);
     this.likeComponent = $event;
+  }
+  onOptionSelection($event: CourseItem) {
+    this.selection = $event;
   }
 
   ngOnInit() {

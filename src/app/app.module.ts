@@ -17,6 +17,9 @@ import { InterationComponent } from './interation/interation.component';
 import { SwichOptionsComponent } from './swich-options/swich-options.component';
 import { StyleAndClassComponent } from './style-and-class/style-and-class.component';
 import { SafeTraversalComponent } from './safe-traversal/safe-traversal.component';
+import { InputFormatDirective } from './input-format.directive';
+import { CustomDirectiveComponent } from './custom-directive/custom-directive.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { SafeTraversalComponent } from './safe-traversal/safe-traversal.componen
     InterationComponent,
     SwichOptionsComponent,
     StyleAndClassComponent,
-    SafeTraversalComponent
+    SafeTraversalComponent,
+    InputFormatDirective,
+    CustomDirectiveComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,23 @@
+<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+  <ul class="nav nav-pills nav-stacked">
+    <li class="nav-item" [class.active]="selection == 1">
+      <a class="nav-link" (click)="onClicked(1)">Bindings</a>
+    </li>
+    <li class="nav-item" [class.active]="selection == 2">
+      <a class="nav-link" (click)="onClicked(2)">Pipes</a>
+    </li>
+    <li class="nav-item" [class.active]="selection == 3">
+      <a class="nav-link" (click)="onClicked(3)">Reusable Components</a>
+    </li>
+    <li class="nav-item" [class.active]="selection == 4">
+      <a class="nav-link" (click)="onClicked(4)">Directives</a>
+    </li>
+    <li class="nav-item" [class.active]="selection == 5">
+      <a class="nav-link" (click)="onClicked(5)">Utils</a>
+    </li>
+
+    <!--  <li *ngFor="let option of selectionOptions" class="nav-item" [class.active]="option == selection">
+        <a class="nav-link" (click)="onClicked(option)">{{option}}</a>
+    </li>-->
+  </ul>
+</div>
