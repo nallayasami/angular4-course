@@ -16,6 +16,7 @@ import { ShowOrHideComponent } from './show-or-hide/show-or-hide.component';
 import { InterationComponent } from './interation/interation.component';
 import { SwichOptionsComponent } from './swich-options/swich-options.component';
 import { StyleAndClassComponent } from './style-and-class/style-and-class.component';
+import { SafeTraversalComponent } from './safe-traversal/safe-traversal.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { StyleAndClassComponent } from './style-and-class/style-and-class.compon
     ShowOrHideComponent,
     InterationComponent,
     SwichOptionsComponent,
-    StyleAndClassComponent
+    StyleAndClassComponent,
+    SafeTraversalComponent
   ],
   imports: [
     BrowserModule,
