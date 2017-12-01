@@ -23,6 +23,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { CamelCaseSplitPipe } from './camel-case-split.pipe';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { CamelCaseSplitPipe } from './camel-case-split.pipe';
     NavbarComponent,
     PipeComponent,
     TemplateDrivenFormComponent,
-    CamelCaseSplitPipe
+    CamelCaseSplitPipe,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,

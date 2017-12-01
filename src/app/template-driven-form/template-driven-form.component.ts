@@ -9,6 +9,8 @@ export class TemplateDrivenFormComponent implements OnInit {
 
   constructor() { }
 
+  contactMethods: Array<any> = [{ id: '1', value: 'E-Mail' }, { id: '2', value: 'Telephone' }];
+
   ngOnInit() {
   }
 
