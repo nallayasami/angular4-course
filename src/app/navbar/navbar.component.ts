@@ -13,18 +13,17 @@ export class NavbarComponent implements OnInit {
   @Input('selection') selection: CourseItem;
   @Output('onClick') onClick = new EventEmitter();
 
-  selectionOptions: Array<string> = Object.keys(CourseItem).splice(Object.keys(CourseItem).length/2, Object.keys(CourseItem).length-1);
+  selectionOptions: Array<string> = Object.keys(CourseItem).splice(Object.keys(CourseItem).length / 2, Object.keys(CourseItem).length - 1);
 
   ngOnInit() {
   }
 
   onClicked(selection: CourseItem) {
     this.selection = selection;
-    this.onClick.emit(this.selection);
+    this.onClick.emit(CourseItem[selection]);
   }
 
-  private getSelection(){
-    
+  isSelected(option: string): boolean {
+    return CourseItem[option] === this.selection;
   }
-
 }

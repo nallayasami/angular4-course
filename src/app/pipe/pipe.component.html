@@ -1,0 +1,45 @@
+<app-content>
+  <ng-container class="header">
+    Sample built in pipes
+  </ng-container>
+  <ng-container class="body">
+    <span class="label label-default col-md-2">UpperCasePipe</span>
+    <span class="label label-success col-md-10">{{pipesObject.stringValue | uppercase }}</span>
+    <span class="label label-default col-md-2">LowerCasePipeChained</span>
+    <span class="label label-success col-md-10">{{pipesObject.stringValue | uppercase | lowercase }}</span>
+    <span class="label label-default col-md-2">TitleCasePipe</span>
+    <span class="label label-success col-md-10">{{pipesObject.stringValue | titlecase }}</span>
+    <span class="label label-default col-md-2">NumberPipe</span>
+    <span class="label label-success col-md-10">{{pipesObject.numberValue|number}}</span>
+    <span class="label label-default col-md-2">DecimalPipe</span>
+    <span class="label label-success col-md-10">{{pipesObject.decimalVal|number:'3.10-10'}}</span>
+    <span class="label label-default col-md-2">CurrencyPipe</span>
+    <span class="label label-success col-md-10">{{pipesObject.decimalVal|currency:'EUR':true}}</span>
+    <span class="label label-default col-md-2">DatePipe</span>
+    <span class="label label-success col-md-10">{{pipesObject.date|date:'shortDate'}}</span>
+  </ng-container>
+</app-content>
+
+<app-content>
+  <ng-container class="header">
+    Custom Pipes
+  </ng-container>
+  <ng-container class="body">
+    <div class="form-group">
+      <label for="input_string" class="col-sm-2 control-label">StringInput:</label>
+      <div class="col-sm-10">
+        <input type="text" name="" id="input_string" class="form-control" [(ngModel)]="pipesObject.stringValue" required="required"
+          pattern="" title="">
+      </div>
+      <label for="input_subStringLimit" class="col-sm-2 control-label">SubStringLimit:</label>
+      <div class="col-sm-10">
+        <input type="text" name="" id="input_subStringLimit" class="form-control" [(ngModel)]="pipesObject.stringLimit" required="required"
+          pattern="" title="">
+      </div>
+    </div>
+  </ng-container>
+  <ng-container class="footer">
+    <span class="label label-default">output:</span>
+    <span class="label label-success">{{pipesObject.stringValue | custom:pipesObject.stringLimit}}</span>
+  </ng-container>
+</app-content>

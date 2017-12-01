@@ -1,0 +1,36 @@
+<!-- ngForm is added to all the forms by default ouput genrated by a NgForm is ngSubmit-->
+<form #f="ngForm" (ngSubmit)="formSubmit(f)">
+  <legend>Template Driven Form Validation</legend>
+  <!-- ngModelGroup groups the formGroups under a complex objects and hlepful for the combined validation -->
+  <div ngModelGroup="user" #userGroup="ngModelGroup">
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input ngModel name="firstName" type="text" minlength="3" #firstName="ngModel" required (change)="log(firstName)" class="form-control"
+        id="firstName" placeholder="First Name" pattern="[a-zA-Z]+">
+      <div class="alert alert-danger" *ngIf="firstName.invalid && firstName.touched">
+        <div *ngIf="firstName.errors.required">First Name is required</div>
+        <div *ngIf="firstName.errors.minlength">First Name minlength required {{firstName.errors.minlength.requiredLength}} charactors</div>
+        <div *ngIf="firstName.errors.pattern">First Name not valid !</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input ngModel name="lastName" type="text" #lastName="ngModel" required minlength="2" pattern="[a-zA-Z]+" (change)="log(lastName)"
+        class="form-control" id="lastName" placeholder="Last Name">
+      <div class="alert alert-danger" *ngIf="lastName.invalid && lastName.touched">
+        <div *ngIf="lastName.errors.required">last Name is required</div>
+        <div *ngIf="lastName.errors.minlength">last Name minlength required {{lastName.errors.minlength.requiredLength}} charactors</div>
+        <div *ngIf="lastName.errors.pattern">last Name not valid !</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input ngModel name="age" type="number" maxlength="3" #age="ngModel" required (change)="log(age)" class="form-control" id="age"
+        placeholder="Age">
+      <div class="alert alert-danger" *ngIf="age.invalid && age.touched">
+        Age is Required
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -20,6 +20,9 @@ import { SafeTraversalComponent } from './safe-traversal/safe-traversal.componen
 import { InputFormatDirective } from './input-format.directive';
 import { CustomDirectiveComponent } from './custom-directive/custom-directive.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { PipeComponent } from './pipe/pipe.component';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { CamelCaseSplitPipe } from './camel-case-split.pipe';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     SafeTraversalComponent,
     InputFormatDirective,
     CustomDirectiveComponent,
-    NavbarComponent
+    NavbarComponent,
+    PipeComponent,
+    TemplateDrivenFormComponent,
+    CamelCaseSplitPipe
   ],
   imports: [
     BrowserModule,

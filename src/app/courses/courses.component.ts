@@ -18,18 +18,10 @@ export class CoursesComponent implements OnInit {
   emailId: String;
   counter = 0;
   courses: Array<String>;
-  selection: CourseItem = CourseItem.Binding;
+  selection: CourseItem = CourseItem.TemplateDrivenForms;
 
   reusableComponent: FavoriteComponentArgs = { isFavorite: false };
   likeComponent: LikeComponentArgs = { isLiked: true, likeCount: 10 };
-
-  pipesObject: any = {
-    numberValue: 12548,
-    stringValue: 'Test the bigger String with multiple char',
-    date: new Date(),
-    decimalVal: 124.4557,
-    stringLimit: 10
-  };
 
   constructor(service: CoursesServcie) {
     this.courses = service.getCourses();
