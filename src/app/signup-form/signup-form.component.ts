@@ -13,7 +13,11 @@ export class SignupFormComponent {
       Validators.required,
       Validators.minLength(3),
       Validators.pattern('[a-z|A-Z]+')], StringValidators.shouldBeUnique),
-    password: new FormControl('', [Validators.required, Validators.minLength(8), StringValidators.containWhiteSpace])
+    password: new FormControl('', [Validators.required, Validators.minLength(8), StringValidators.containWhiteSpace]),
+    address: new FormGroup({
+      city: new FormControl('', [Validators.required]),
+      postalCode: new FormControl('', [Validators.required, Validators.pattern('[0-9]+')])
+    })
   });
 
   isServerDown = false;
@@ -22,6 +26,7 @@ export class SignupFormComponent {
     if (this.isServerDown) {
       this.fg.setErrors({ isServerDown: true });
     }
+    console.log(this.fg.value);
   }
 
 
@@ -30,6 +35,14 @@ export class SignupFormComponent {
   }
   get password() {
     return this.fg.get('password');
+  }
+
+  get city() {
+    return this.fg.get('address.city');
+  }
+
+  get postalCode() {
+    return this.fg.get('address.postalCode');
   }
 
 }

@@ -1,5 +1,5 @@
 <form [formGroup]="fg" (ngSubmit)="onSubmit()">
-    <legend>Reactive Forms and Validation</legend>
+    <legend>Reactive Sign up Forms and Validation</legend>
 
 
     <div class="alert alert-danger" *ngIf="fg.errors?.isServerDown">
@@ -23,6 +23,22 @@
             <div *ngIf="password.errors.required">Password is required</div>
             <div *ngIf="password.errors.minlength">Password minlength required {{password.errors.minlength.requiredLength}} charactors</div>
             <div *ngIf="password.errors.containWhiteSpace">Password should not contail empty space</div>
+        </div>
+    </div>
+    <div formGroupName="address">
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" formControlName="city" placeholder="city">
+            <div class="alert alert-danger" *ngIf="city.invalid && city.touched">
+                <div *ngIf="city.errors.required">city is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="city">Postal code</label>
+            <input type="text" class="form-control" formControlName="postalCode" placeholder="postal code">
+            <div class="alert alert-danger" *ngIf="postalCode.invalid && postalCode.touched">
+                <div *ngIf="postalCode.errors.required">postal code is required</div>
+            </div>
         </div>
     </div>
     <button class="btn btn-primary" type="submit" [disabled]="fg.invalid">Sign Up</button>
