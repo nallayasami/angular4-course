@@ -1,0 +1,34 @@
+<form [formGroup]="fg" (ngSubmit)="onSubmit()">
+    <legend>Reactive Forms and Validation</legend>
+
+
+    <div class="alert alert-danger" *ngIf="fg.errors?.isServerDown">
+        Server is Down, Try after some time
+    </div>
+    <div class="form-group">
+        <label for="userName">UserName</label>
+        <input formControlName="userName" id="userName" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="userName.invalid && userName.touched">
+            <div *ngIf="userName.errors.required">User Name is required</div>
+            <div *ngIf="userName.errors.minlength">User Name minlength required {{userName.errors.minlength.requiredLength}} charactors</div>
+            <div *ngIf="userName.errors.pattern">User Name not valid !</div>
+            <div *ngIf="userName.errors.shouldBeUnique">User Name already taken !</div>
+        </div>
+        <div *ngIf="fg.pending"> Uniqueness verification is in Progress..</div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input formControlName="password" id="password" type="password" class="form-control">
+        <div class="alert alert-danger" *ngIf="password.invalid && password.touched">
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.minlength">Password minlength required {{password.errors.minlength.requiredLength}} charactors</div>
+            <div *ngIf="password.errors.containWhiteSpace">Password should not contail empty space</div>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="fg.invalid">Sign Up</button>
+</form>
+<div class="checkbox">
+    <label>
+        <input type="checkbox" name="" [(ngModel)]="isServerDown"> Server Down
+    </label>
+</div>

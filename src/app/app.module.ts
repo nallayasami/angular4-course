@@ -1,6 +1,6 @@
 import { CoursesServcie } from './courses/courses.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -24,6 +24,7 @@ import { PipeComponent } from './pipe/pipe.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { CamelCaseSplitPipe } from './camel-case-split.pipe';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
@@ -47,11 +48,13 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     PipeComponent,
     TemplateDrivenFormComponent,
     CamelCaseSplitPipe,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [CoursesServcie],
   bootstrap: [AppComponent]
