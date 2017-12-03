@@ -25,6 +25,8 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
 import { CamelCaseSplitPipe } from './camel-case-split.pipe';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { ReactiveArrayComponent } from './reactive-array/reactive-array.component';
+import { FormBuilderComponent } from './form-builder/form-builder.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     TemplateDrivenFormComponent,
     CamelCaseSplitPipe,
     ReactiveFormComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    ReactiveArrayComponent,
+    FormBuilderComponent
   ],
   imports: [
     BrowserModule,

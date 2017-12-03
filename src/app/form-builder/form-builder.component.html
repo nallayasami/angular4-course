@@ -1,0 +1,19 @@
+
+<form [formGroup]="form" (ngSubmit)="log()">
+  <legend>Form using  FormBuilder </legend>
+
+  <div class="form-group">
+    <label for="fullName">Full Name:</label>
+    <input type="text" class="form-control" id="fullName" formControlName="fullName" placeholder="Input field">
+  </div>
+  <div formGroupName="address">
+    <div class="form-group">
+      <label for="city">City:</label>
+      <input type="text" class="form-control" id="city" formControlName="city" placeholder="Input field">
+    </div>
+  </div>
+
+  
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

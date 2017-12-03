@@ -1,0 +1,14 @@
+
+<form [formGroup] = "form">
+  <legend>Form title</legend>
+
+  <div class="form-group">
+    <label for="">Courses :</label>
+    <input type="text" class="form-control" id="" placeholder="Input field" #course (keyup.enter)="addCourse(course)">
+  </div>
+  
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let course of courses.controls" (click)="removeCourse(course)">{{course.value}}</li>
+  </ul>
+
+</form>

@@ -5,5 +5,6 @@ export enum CourseItem {
     Directives = 4,
     Utils = 5,
     TemplateDrivenForms = 6,
-    ReactiveFroms = 7
+    ReactiveFroms = 7,
+    HttpServices = 8
 }
