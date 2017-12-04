@@ -1,7 +1,8 @@
 import { CoursesServcie } from './courses/courses.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
@@ -27,6 +28,11 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { ReactiveArrayComponent } from './reactive-array/reactive-array.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
+import { PostsComponent } from './posts/posts.component';
+import { PostsService } from './posts.service';
+import { AppErrorHandler } from './common/error/app-error-handler';
+import { UserComponent } from './user/user.component';
+import { TestComponent } from './comp/test/test.component'
 
 @NgModule({
   declarations: [
@@ -53,14 +59,22 @@ import { FormBuilderComponent } from './form-builder/form-builder.component';
     ReactiveFormComponent,
     SignupFormComponent,
     ReactiveArrayComponent,
-    FormBuilderComponent
+    FormBuilderComponent,
+    PostsComponent,
+    UserComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
-  providers: [CoursesServcie],
+  providers: [
+    CoursesServcie,
+    PostsService,
+    {provide: ErrorHandler, useClass: AppErrorHandler}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

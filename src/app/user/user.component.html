@@ -1,0 +1,18 @@
+<form #form= "ngForm">
+  <legend>Http Services- using optimistic method</legend>
+
+  <div class="form-group">
+    <label for="">Post title :</label>
+    <input type="text" class="form-control" id="" placeholder="Input field" (keyup.enter)="addPost(input)" #input>
+  </div>
+
+  <ul class="list-group">
+    <li *ngFor="let post of posts" class="list-group-item">{{post.title}}
+      <button class="btn btn-primary glyphicon glyphicon-pencil" (click)="updatePost(post)"></button>
+      <button class="btn btn-danger glyphicon glyphicon-trash" (click)="deletePost(post)"></button>
+      <!--<a [href]="post.title">{{post.title}}</a>
+      <div *ngIf="form.pending">In progress ... </div>-->
+    </li>
+  </ul>
+
+</form>
