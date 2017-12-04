@@ -32,7 +32,9 @@ import { PostsComponent } from './posts/posts.component';
 import { PostsService } from './posts.service';
 import { AppErrorHandler } from './common/error/app-error-handler';
 import { UserComponent } from './user/user.component';
-import { TestComponent } from './comp/test/test.component'
+import { TestComponent } from './comp/test/test.component';
+import { ErrorComponent } from './common/error/error.component';
+import { FormGroupComponent } from './form-group/form-group.component'
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { TestComponent } from './comp/test/test.component'
     FormBuilderComponent,
     PostsComponent,
     UserComponent,
-    TestComponent
+    TestComponent,
+    ErrorComponent,
+    FormGroupComponent
   ],
   imports: [
     BrowserModule,
