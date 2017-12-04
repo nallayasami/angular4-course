@@ -6,5 +6,6 @@ export enum CourseItem {
     Utils = 5,
     TemplateDrivenForms = 6,
     ReactiveFroms = 7,
-    HttpServices = 8
+    HttpServices = 8,
+    RoutingAndNavigation = 9
 }

@@ -18,7 +18,7 @@ export class CoursesComponent implements OnInit {
   emailId: String;
   counter = 0;
   courses: Array<String>;
-  selection: CourseItem = CourseItem.HttpServices;
+  selection: CourseItem = CourseItem.RoutingAndNavigation;
 
   reusableComponent: FavoriteComponentArgs = { isFavorite: false };
   likeComponent: LikeComponentArgs = { isLiked: true, likeCount: 10 };

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
@@ -34,7 +35,8 @@ import { AppErrorHandler } from './common/error/app-error-handler';
 import { UserComponent } from './user/user.component';
 import { TestComponent } from './comp/test/test.component';
 import { ErrorComponent } from './common/error/error.component';
-import { FormGroupComponent } from './form-group/form-group.component'
+import { FormGroupComponent } from './form-group/form-group.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -66,18 +68,37 @@ import { FormGroupComponent } from './form-group/form-group.component'
     UserComponent,
     TestComponent,
     ErrorComponent,
-    FormGroupComponent
+    FormGroupComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      {
+        path: 'component',
+        component: CourseComponent
+      },
+      {
+        path: 'posts',
+        component: PostsComponent
+      },
+      {
+        path: 'user',
+        component: UserComponent
+      },
+      {
+        path: '**',
+        component: NotFoundComponent
+      },
+    ])
   ],
   providers: [
     CoursesServcie,
     PostsService,
-    {provide: ErrorHandler, useClass: AppErrorHandler}
+    { provide: ErrorHandler, useClass: AppErrorHandler }
   ],
   bootstrap: [AppComponent]
 })
