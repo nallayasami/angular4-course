@@ -12,7 +12,7 @@ import { BadRequsetError } from '../common/error/BadRequsetError';
 })
 export class PostsComponent implements OnInit {
   posts: Array<any>;
-  form: FormGroup;
+  // form: FormGroup;
   constructor(private service: PostsService) { }
 
   deletePost(post) {
@@ -20,12 +20,12 @@ export class PostsComponent implements OnInit {
     this.posts.splice(index, 1);
 
     this.service.delete(post.id).subscribe(() => { }, (error: BaseError) => {
-      this.form.setErrors({ loginFaild: true });
+      // this.form.setErrors({ loginFaild: true });
+      this.posts.splice(index, 0, post);
       if (error instanceof NotFoundError) {
         // some logging and error display
         alert('Resource not found');
       } else {
-        this.posts.splice(index, 0, post);
         throw error;
       }
     });
