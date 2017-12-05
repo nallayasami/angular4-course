@@ -1,5 +1,5 @@
-<form #form= "ngForm">
-  <legend>Http Services- using optimistic method</legend>
+<form #form="ngForm">
+  <legend>User servcie</legend>
 
   <div class="form-group">
     <label for="">Post title :</label>
@@ -7,9 +7,10 @@
   </div>
 
   <ul class="list-group">
-    <li *ngFor="let post of posts" class="list-group-item">{{post.title}}
-      <button class="btn btn-primary glyphicon glyphicon-pencil" (click)="updatePost(post)"></button>
-      <button class="btn btn-danger glyphicon glyphicon-trash" (click)="deletePost(post)"></button>
+    <li *ngFor="let user of users" class="list-group-item">
+      <a [routerLink]="['/user', user.id]">
+        {{user.name}}
+      </a>
       <!--<a [href]="post.title">{{post.title}}</a>
       <div *ngIf="form.pending">In progress ... </div>-->
     </li>

@@ -31,9 +31,20 @@ export class DataService {
   }
 
   getAll() {
-    return this.http.get(this.url).map((response: Response) => {
-      return response.json();
-    }).catch(this.handleError);
+    return this.http
+      .get(this.url)
+      .map((response: Response) => {
+        return response.json();
+      })
+      .catch(this.handleError);
+  }
+  get(id: any) {
+    return this.http
+      .get(this.url + id)
+      .map((response: Response) => {
+        return response.json();
+      })
+      .catch(this.handleError);
   }
 
   delete(id) {

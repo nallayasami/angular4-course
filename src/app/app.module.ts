@@ -1,3 +1,4 @@
+import { UserDetailsService } from './user-details.service';
 import { CoursesServcie } from './courses/courses.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -37,6 +38,8 @@ import { TestComponent } from './comp/test/test.component';
 import { ErrorComponent } from './common/error/error.component';
 import { FormGroupComponent } from './form-group/form-group.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { UserService } from './common/service/user.service';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +72,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     TestComponent,
     ErrorComponent,
     FormGroupComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -90,6 +94,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
         component: UserComponent
       },
       {
+        path: 'user/:userId',
+        component: UserDetailsComponent
+      },
+      {
         path: '**',
         component: NotFoundComponent
       },
@@ -98,7 +106,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
   providers: [
     CoursesServcie,
     PostsService,
-    { provide: ErrorHandler, useClass: AppErrorHandler }
+    UserService,
+    { provide: ErrorHandler, useClass: AppErrorHandler },
   ],
   bootstrap: [AppComponent]
 })
