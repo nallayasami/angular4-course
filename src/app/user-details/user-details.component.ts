@@ -20,14 +20,11 @@ export class UserDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    /*not updated on same component rerender
+    /*can be used but not updated on same component rerender
     this.router.snapshot*/
     this.router.paramMap.subscribe((value) => {
-      console.log(value.get('userId'));
       this.service.get(value.get('userId')).subscribe((output) => {
-        console.log(output);
         this.user = output;
-        console.log(this.user);
       });
     });
   }

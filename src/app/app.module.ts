@@ -1,4 +1,3 @@
-import { UserDetailsService } from './user-details.service';
 import { CoursesServcie } from './courses/courses.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -82,22 +81,27 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     HttpModule,
     RouterModule.forRoot([
       {
+        pathMatch: 'full',
         path: 'component',
         component: CourseComponent
       },
       {
+        pathMatch: 'full',
         path: 'posts',
         component: PostsComponent
       },
       {
+        pathMatch: 'full',
         path: 'user',
         component: UserComponent
       },
       {
+        pathMatch: 'full',
         path: 'user/:userId',
         component: UserDetailsComponent
       },
       {
+        pathMatch: 'full',
         path: '**',
         component: NotFoundComponent
       },
