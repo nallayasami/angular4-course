@@ -1,9 +1,11 @@
+import { MessageService } from 'primeng/components/common/messageservice';
 import { CoursesServcie } from './courses/courses.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import {GrowlModule} from 'primeng/primeng';
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
@@ -79,6 +81,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    GrowlModule,
     RouterModule.forRoot([
       {
         pathMatch: 'full',
@@ -111,6 +114,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     CoursesServcie,
     PostsService,
     UserService,
+    MessageService,
     { provide: ErrorHandler, useClass: AppErrorHandler },
   ],
   bootstrap: [AppComponent]

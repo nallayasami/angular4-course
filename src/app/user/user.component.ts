@@ -13,7 +13,8 @@ export class UserComponent implements OnInit {
   users: Array<any>;
 
   ngOnInit() {
-    this.service.getAll().subscribe((response) => {
+    this.service.getAll().subscribe((response: Array<any>) => {
+      response.push({ id: 123, name: 'invalid URL', email: 'invalid@test.com' });
       this.users = response;
     });
   }
