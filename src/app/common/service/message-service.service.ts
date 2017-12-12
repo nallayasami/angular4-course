@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 export class MessageServiceService {
 
   constructor() { }
-  private messageStatus = new BehaviorSubject<Message>({});
+  private messageStatus = new BehaviorSubject<Message>(null);
   // Observable stream
   message = this.messageStatus.asObservable();
   // service command

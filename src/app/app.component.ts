@@ -24,8 +24,10 @@ export class AppComponent implements OnInit {
       this.cdr.detectChanges();
     });
     this.message.message.subscribe(state => {
-      console.log('state', state);
-      this.msgs.push(state);
+      console.log('state msg', state);
+      if (state) {
+        this.msgs.push(state);
+      }
       this.cdr.detectChanges();
     });
   }
