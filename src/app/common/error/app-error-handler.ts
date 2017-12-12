@@ -12,6 +12,7 @@ export class AppErrorHandler implements ErrorHandler {
         const router = this.injector.get(Router);
         console.log('NKA', error);
         //  router.navigate(['/user']);
+        //  router.navigate(['/user'], {queryParams:{key:value}});
         service.addMessage({ severity: 'error', summary: 'Internal Error', detail: 'Please try again later' });
     }
 }

@@ -2,13 +2,14 @@ import { MessageServiceService } from './common/service/message-service.service'
 import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
 import { Message } from 'primeng/primeng';
 import { ServiceStatusService } from './common/service/service-status.service';
+import { OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'app';
   isPending: boolean;
   msgs: Message[] = [];
@@ -19,17 +20,19 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.serviceStatus.serviceState.subscribe(state => {
-      console.log('state', state);
       this.isPending = state;
       this.cdr.detectChanges();
     });
     this.message.message.subscribe(state => {
-      console.log('state msg', state);
+      // console.log('state msg', state);
       if (state) {
         this.msgs.push(state);
       }
       this.cdr.detectChanges();
     });
+  }
+
+  ngOnDestroy() {
   }
 
 }

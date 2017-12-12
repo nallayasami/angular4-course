@@ -28,8 +28,9 @@ export class UserDetailsComponent implements OnInit {
   ngOnInit() {
     /*can be used but not updated on same component rerender
     this.router.snapshot*/
-    Observable.combineLatest([this.router.paramMap])
+    Observable.combineLatest([this.router.paramMap, this.router.queryParams])
       .switchMap((paramMap) => {
+        console.log(paramMap[0].get('userId'));
         return this.service.get(paramMap[0].get('userId'));
       }).subscribe(output => {
         this.user = output;

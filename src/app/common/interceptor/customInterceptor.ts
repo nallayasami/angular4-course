@@ -12,16 +12,15 @@ export class CustomInterceptor implements HttpInterceptor {
     constructor(private injector: Injector) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        console.log('test');
         const serviceStatus: ServiceStatusService = this.injector.get(ServiceStatusService);
         return next.handle(req)
             .do((request: HttpEvent<any>) => {
-                console.log('Begins', req.url);
+                // console.log('Begins', req.url);
                 serviceStatus.changeState(true);
             })
             .finally(() => {
                 serviceStatus.changeState(false);
-                console.log('Ends');
+                // console.log('Ends');
             });
     }
 }
