@@ -7,9 +7,10 @@
   </div>
 
   <ul class="list-group">
-    <li *ngFor="let post of posts" class="list-group-item">{{post.title}}
-      <button class="btn btn-primary glyphicon glyphicon-pencil" (click)="updatePost(post)"></button>
+    <li *ngFor="let post of posts" class="list-group-item">
       <button class="btn btn-danger glyphicon glyphicon-trash" (click)="deletePost(post)"></button>
+      <button class="btn btn-primary glyphicon glyphicon-pencil" (click)="updatePost(post)"></button>
+      {{post.title}}
       <!--<a [href]="post.title">{{post.title}}</a>
       <div *ngIf="form.pending">In progress ... </div>-->
     </li>

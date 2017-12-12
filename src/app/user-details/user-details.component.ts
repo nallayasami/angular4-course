@@ -1,3 +1,4 @@
+import { MessageServiceService } from './../common/service/message-service.service';
 import { MessageService } from 'primeng/components/common/messageservice';
 import { UserService } from './../common/service/user.service';
 import { Component, OnInit } from '@angular/core';
@@ -15,7 +16,7 @@ import 'rxjs/add/operator/switchMap';
 export class UserDetailsComponent implements OnInit {
   user: any;
 
-  constructor(private service: UserService, private router: ActivatedRoute, private messageService: MessageService) { }
+  constructor(private service: UserService, private router: ActivatedRoute, private messageService: MessageServiceService) { }
 
   get name() {
     return this.user.name;
@@ -32,7 +33,7 @@ export class UserDetailsComponent implements OnInit {
         return this.service.get(paramMap[0].get('userId'));
       }).subscribe(output => {
         this.user = output;
-        this.messageService.add({ severity: 'success', summary: 'Used Loaded ', detail: 'User loaded successfully' });
+        this.messageService.addMessage({ severity: 'success', summary: 'Used Loaded ', detail: 'User loaded successfully' });
       });
     // this.router.paramMap.subscribe((value) => {
     //   this.service.get(value.get('userId')).subscribe((output) => {

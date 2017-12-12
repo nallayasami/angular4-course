@@ -1,3 +1,4 @@
+import { ServiceStatusService } from './common/service/service-status.service';
 import { MessageService } from 'primeng/components/common/messageservice';
 import { CoursesServcie } from './courses/courses.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -5,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import {GrowlModule} from 'primeng/primeng';
+import { GrowlModule, ProgressBarModule } from 'primeng/primeng';
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
@@ -41,6 +42,11 @@ import { FormGroupComponent } from './form-group/form-group.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserService } from './common/service/user.service';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { ProgressSpinnerModule } from 'primeng/primeng';
+import { CustomInterceptor } from './common/interceptor/customInterceptor';
+import { MessageServiceService } from './common/service/message-service.service';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -81,7 +87,9 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    HttpClientModule,
     GrowlModule,
+    ProgressBarModule,
     RouterModule.forRoot([
       {
         pathMatch: 'full',
@@ -115,7 +123,17 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     PostsService,
     UserService,
     MessageService,
-    { provide: ErrorHandler, useClass: AppErrorHandler },
+    ServiceStatusService,
+    MessageServiceService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CustomInterceptor,
+      multi: true
+    },
+    {
+      provide: ErrorHandler,
+      useClass: AppErrorHandler
+    },
   ],
   bootstrap: [AppComponent]
 })

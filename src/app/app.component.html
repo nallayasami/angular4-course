@@ -1,3 +1,6 @@
-<p-growl [(value)]="msgs"></p-growl>
+
+<!-- <p-progressSpinner ></p-progressSpinner> -->
 <app-courses></app-courses>
+<p-growl [(value)]="msgs"></p-growl>
+<p-progressBar *ngIf="isPending" mode="indeterminate" [style]="{'height': '6px'}"></p-progressBar>
 <!--<app-binding></app-binding>-->

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { NotFoundError } from './../error/NotFoundError';
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
@@ -11,40 +12,40 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class DataService {
-  constructor(private url, private http: Http) { }
+  constructor(private url, private http: HttpClient) { }
 
   add(resource) {
     // return Observable.throw(new BaseError());
     return this.http.post(this.url, resource)
-      .map((response: Response) => {
-        return response.json();
-      })
       .catch(this.handleError);
+    // .map((response: Response) => {
+    //   return response.json();
+    // })
   }
 
   update(resource: any) {
     resource.title = resource.title + '_updated';
-    // return this.http.put(this.url + resource.id, JSON.stringify(resource))
     return this.http.patch(this.url + resource.id, JSON.stringify(resource))
-      .map(response => response.json())
+      // return this.http.put(this.url + resource.id, JSON.stringify(resource))
       .catch(this.handleError);
+    // .map(response => response.json())
   }
 
   getAll() {
     return this.http
       .get(this.url)
-      .map((response: Response) => {
-        return response.json();
-      })
       .catch(this.handleError);
+        // .map((response: Response) => {
+        //   return response.json();
+        // })
   }
   get(id: any) {
     return this.http
       .get(this.url + id)
-      .map((response: Response) => {
-        return response.json();
-      })
       .catch(this.handleError);
+    // .map((response: Response) => {
+    //   return response.json();
+    // })
   }
 
   delete(id) {
