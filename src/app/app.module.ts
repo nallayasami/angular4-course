@@ -46,6 +46,8 @@ import { ProgressSpinnerModule } from 'primeng/primeng';
 import { CustomInterceptor } from './common/interceptor/customInterceptor';
 import { MessageServiceService } from './common/service/message-service.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { PrimeOrderListComponent } from './prime-order-list/prime-order-list.component';
+import {OrderListModule} from 'primeng/primeng';
 
 
 @NgModule({
@@ -80,7 +82,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
     ErrorComponent,
     FormGroupComponent,
     NotFoundComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    PrimeOrderListComponent
   ],
   imports: [
     BrowserModule,
@@ -90,6 +93,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     GrowlModule,
     ProgressBarModule,
+    OrderListModule,
     RouterModule.forRoot([
       {
         pathMatch: 'full',

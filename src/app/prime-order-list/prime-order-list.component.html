@@ -1,0 +1,16 @@
+<form action="" method="POST" role="form">
+    <legend>Order List</legend>
+
+    <p-orderList [value]="cars" [listStyle]="{'height':'250px'}" [responsive]="true" header="Cars" filter="filter" filterBy="brand"
+        filterPlaceholder="Filter by brand" dragdrop="true" dragdropScope="cars">
+        <ng-template let-car pTemplate="item">
+            <div class="ui-helper-clearfix">
+                <div style="font-size:14px;margin:5px">{{car.brand}}</div>
+            </div>
+        </ng-template>
+    </p-orderList>
+
+    
+    <button type="button" class="btn btn-default" (click) = "onReorder()" >Save</button>
+    
+</form>
