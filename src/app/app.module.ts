@@ -48,6 +48,7 @@ import { MessageServiceService } from './common/service/message-service.service'
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { PrimeOrderListComponent } from './prime-order-list/prime-order-list.component';
 import {OrderListModule} from 'primeng/primeng';
+import { ScriptLoadingComponent } from './script-loading/script-loading.component';
 
 
 @NgModule({
@@ -83,7 +84,8 @@ import {OrderListModule} from 'primeng/primeng';
     FormGroupComponent,
     NotFoundComponent,
     UserDetailsComponent,
-    PrimeOrderListComponent
+    PrimeOrderListComponent,
+    ScriptLoadingComponent
   ],
   imports: [
     BrowserModule,
