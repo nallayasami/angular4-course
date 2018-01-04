@@ -1,0 +1,7 @@
+<div *ngFor="let car of cars">
+  <div appLazyLoad>
+    <ng-template>
+      <app-prime-defer-comp [car]='car'></app-prime-defer-comp>
+    </ng-template>
+  </div>
+</div>

@@ -7,5 +7,6 @@ export enum CourseItem {
     TemplateDrivenForms = 6,
     ReactiveFroms = 7,
     HttpServices = 8,
-    RoutingAndNavigation = 9
+    RoutingAndNavigation = 9,
+    LazyLoading = 10
 }

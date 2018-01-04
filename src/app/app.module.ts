@@ -1,3 +1,4 @@
+import { TemplateRef } from '@angular/core';
 import { ServiceStatusService } from './common/service/service-status.service';
 import { MessageService } from 'primeng/components/common/messageservice';
 import { CoursesServcie } from './courses/courses.service';
@@ -6,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { GrowlModule, ProgressBarModule } from 'primeng/primeng';
+import { GrowlModule, ProgressBarModule, DeferModule, DataListModule, Header, Footer } from 'primeng/primeng';
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
@@ -47,8 +48,13 @@ import { CustomInterceptor } from './common/interceptor/customInterceptor';
 import { MessageServiceService } from './common/service/message-service.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { PrimeOrderListComponent } from './prime-order-list/prime-order-list.component';
-import {OrderListModule} from 'primeng/primeng';
+import { OrderListModule } from 'primeng/primeng';
 import { ScriptLoadingComponent } from './script-loading/script-loading.component';
+import { PrimeDeferComponent } from './prime-defer/prime-defer.component';
+import { PrimeDeferCompComponent } from './prime-defer-comp/prime-defer-comp.component';
+import { CarService } from './prime-defer/car.service';
+import { LazyLoadDirective } from './lazy-load.directive';
+import { DomHandler } from 'primeng/components/dom/domhandler';
 
 
 @NgModule({
@@ -85,7 +91,12 @@ import { ScriptLoadingComponent } from './script-loading/script-loading.componen
     NotFoundComponent,
     UserDetailsComponent,
     PrimeOrderListComponent,
-    ScriptLoadingComponent
+    ScriptLoadingComponent,
+    PrimeDeferComponent,
+    PrimeDeferCompComponent,
+    LazyLoadDirective,
+    // Header,
+    // Footer,
   ],
   imports: [
     BrowserModule,
@@ -122,7 +133,9 @@ import { ScriptLoadingComponent } from './script-loading/script-loading.componen
         path: '**',
         component: NotFoundComponent
       },
-    ])
+    ]),
+    DeferModule,
+    DataListModule,
   ],
   providers: [
     CoursesServcie,
@@ -131,6 +144,9 @@ import { ScriptLoadingComponent } from './script-loading/script-loading.componen
     MessageService,
     ServiceStatusService,
     MessageServiceService,
+    CarService,
+    DomHandler,
+    TemplateRef,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: CustomInterceptor,
