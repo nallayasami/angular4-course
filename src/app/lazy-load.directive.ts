@@ -1,6 +1,6 @@
 import {
   Directive, Renderer2, ElementRef, ViewContainerRef, TemplateRef,
-  HostListener, Output, EventEmitter, OnDestroy, AfterViewInit, EmbeddedViewRef, ContentChild, ChangeDetectorRef
+  Output, EventEmitter, OnDestroy, AfterViewInit, EmbeddedViewRef, ContentChild, ChangeDetectorRef
 } from '@angular/core';
 
 @Directive({
