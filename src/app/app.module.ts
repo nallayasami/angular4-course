@@ -146,7 +146,6 @@ import { DomHandler } from 'primeng/components/dom/domhandler';
     MessageServiceService,
     CarService,
     DomHandler,
-    TemplateRef,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: CustomInterceptor,

@@ -1,8 +1,7 @@
 import {
   Directive, Renderer2, ElementRef, ViewContainerRef, TemplateRef,
-  HostListener, Output, EventEmitter, OnDestroy, AfterViewInit, EmbeddedViewRef
+  HostListener, Output, EventEmitter, OnDestroy, AfterViewInit, EmbeddedViewRef, ContentChild, ChangeDetectorRef
 } from '@angular/core';
-import { DomHandler } from 'primeng/components/dom/domhandler';
 
 @Directive({
   selector: '[appLazyLoad]'
@@ -12,17 +11,16 @@ export class LazyLoadDirective implements OnDestroy, AfterViewInit {
   @Output('onLoad') onLoad: EventEmitter<any> = new EventEmitter();
   private view: EmbeddedViewRef<any>;
   private documentScrollListener: Function;
+  @ContentChild(TemplateRef) private template: TemplateRef<any>;
 
   constructor(
     private el: ElementRef,
-    private domHandler: DomHandler,
     private renderer: Renderer2,
-    private template: TemplateRef<any>,
-    private viewContainer: ViewContainerRef) {
-
+    private viewContainer: ViewContainerRef,
+    private cdr: ChangeDetectorRef) {
   }
 
-  shouldLoad() {
+  shouldLoad(): boolean {
     const rect = this.el.nativeElement.getBoundingClientRect();
     const docElement = document.documentElement;
     const scrollTop = (window.pageYOffset || document.documentElement.scrollTop);
@@ -31,21 +29,28 @@ export class LazyLoadDirective implements OnDestroy, AfterViewInit {
   }
 
   load() {
-    this.view = this.viewContainer.createEmbeddedView(this.template);
-    this.onLoad.emit();
+    if (this.template) {
+      this.view = this.viewContainer.createEmbeddedView(this.template);
+      this.onLoad.emit();
+      this.cdr.detectChanges();
+    } else {
+      console.warn('Template does not exist!');
+    }
   }
 
   ngAfterViewInit() {
     if (this.shouldLoad()) {
       this.load();
+    } else {
+      const inst = this;
+      this.documentScrollListener = this.renderer.listen('window', 'scroll', function () {
+        if (inst.shouldLoad()) {
+          inst.load();
+          inst.documentScrollListener();
+          inst.documentScrollListener = null;
+        }
+      });
     }
-    const documentScrollListener = this.renderer.listen('window', 'scroll', function () {
-      if (this.shouldLoad()) {
-        this.load();
-        this.documentScrollListener();
-        this.documentScrollListener = null;
-      }
-    });
   }
 
   ngOnDestroy() {

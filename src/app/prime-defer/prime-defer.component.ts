@@ -12,8 +12,6 @@ export class PrimeDeferComponent implements OnInit {
 
   cars: Car[];
 
-  defer: any;
-
   constructor(private carService: CarService) { }
 
   ngOnInit() {
