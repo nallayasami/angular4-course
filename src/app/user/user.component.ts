@@ -12,6 +12,10 @@ export class UserComponent implements OnInit {
 
   users: Array<any>;
 
+  addPost(input: HTMLElement) {
+
+  }
+
   ngOnInit() {
     this.service.getAll().subscribe((response: Array<any>) => {
       response.push({ id: 123, name: 'invalid URL', email: 'invalid@test.com' });

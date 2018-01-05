@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
+import { FormGroup } from '@angular/forms/src/model';
 
 @Component({
   selector: 'app-form-group',
@@ -7,7 +8,7 @@ import { AbstractControl } from '@angular/forms';
   styleUrls: ['./form-group.component.css']
 })
 export class FormGroupComponent implements OnInit {
-  @Input('fGroup') fGroup: AbstractControl;
+  @Input('fGroup') fGroup: FormGroup;
   @Input('controlName') controlName: string;
   @Input('alias') alias: string;
   constructor() { }

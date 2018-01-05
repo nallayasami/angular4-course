@@ -1,4 +1,3 @@
-import { Car } from './../prime-order-list/prime-order-list.component';
 import { Http, Response, RequestOptions } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Headers } from '@angular/http';
@@ -148,4 +147,12 @@ export class CarService {
 
   }
 
+}
+
+
+export class Car {
+  vin: string;
+  brand: string;
+  year: number;
+  color: string;
 }

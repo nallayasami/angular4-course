@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Car } from '../prime-order-list/prime-order-list.component';
+import { Car } from '../prime-defer/car.service';
 
 @Component({
   selector: 'app-prime-defer-comp',
