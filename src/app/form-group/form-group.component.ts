@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
-import { FormGroup } from '@angular/forms/src/model';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-group',
