@@ -26,4 +26,8 @@ export class NavbarComponent implements OnInit {
   isSelected(option: string): boolean {
     return CourseItem[option] === this.selection;
   }
+
+  getSelectionStr() {
+    return CourseItem[this.selection];
+  }
 }
