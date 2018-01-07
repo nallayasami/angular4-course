@@ -65,6 +65,7 @@ export class LazyLoadDirective implements OnDestroy, AfterViewInit {
       this.documentResizeListener = this.renderer.listen('window', 'resize', function () {
         if (inst.shouldLoad()) {
           inst.load();
+          inst.documentResizeListener();
           inst.documentResizeListener = null;
         }
       });
