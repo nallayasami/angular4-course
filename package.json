@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ghp-deploy":"ng build --prod --base-href=https://nallayasami.github.io/angular4-course/"
+    "ghp-deploy": "ng build --prod --base-href=https://nallayasami.github.io/angular4-course/"
   },
   "private": true,
   "dependencies": {
