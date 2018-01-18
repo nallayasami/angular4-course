@@ -5,6 +5,8 @@
 @import "~primeng/resources/themes/omega/theme.css";
 @import "~primeng/resources/primeng.min.css";
 
+body { padding-top: 75px; }
+
 .form-control.ng-touched.ng-invalid{
     border: 1px solid red;
 }
@@ -25,7 +27,7 @@
         display: none!important;
     }
     .navbar-nav {
-        float: none!important;
+        /* float: none!important; */
         margin: 7.5px -15px;
     }
     .navbar-nav>li {
