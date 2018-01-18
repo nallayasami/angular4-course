@@ -4,10 +4,13 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/finally';
 import 'rxjs/add/operator/do';
 import { ServiceStatusService } from '../service/service-status.service';
+import { count } from 'rxjs/operators/count';
 
 
 @Injectable()
 export class CustomInterceptor implements HttpInterceptor {
+
+    count: number = 0;
 
     constructor(private injector: Injector) { }
 
@@ -16,10 +19,18 @@ export class CustomInterceptor implements HttpInterceptor {
         return next.handle(req)
             .do((request: HttpEvent<any>) => {
                 // console.log('Begins', req.url);
+                if (request.type === 0) {
+                    this.count++;
+                }
                 serviceStatus.changeState(true);
+                // console.log('do', this.count);
             })
             .finally(() => {
-                serviceStatus.changeState(false);
+                this.count--;
+                if (this.count === 0) {
+                    serviceStatus.changeState(false);
+                }
+                // console.log('finally', this.count);
                 // console.log('Ends');
             });
     }
