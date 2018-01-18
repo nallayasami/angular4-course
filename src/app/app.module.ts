@@ -55,6 +55,12 @@ import { PrimeDeferCompComponent } from './prime-defer-comp/prime-defer-comp.com
 import { CarService } from './prime-defer/car.service';
 import { LazyLoadDirective } from './lazy-load.directive';
 import { DomHandler } from 'primeng/components/dom/domhandler';
+import { APP_ROUTES } from './app.routes';
+import { HomeComponent } from './component/home/home.component';
+import { ReactiveFormsComponent } from './component/reactive-forms/reactive-forms.component';
+import { UtilsComponent } from './component/utils/utils.component';
+import { DirectivesComponent } from './component/directives/directives.component';
+import { ReusableComponent } from './component/reusable/reusable.component';
 
 
 @NgModule({
@@ -95,6 +101,11 @@ import { DomHandler } from 'primeng/components/dom/domhandler';
     PrimeDeferComponent,
     PrimeDeferCompComponent,
     LazyLoadDirective,
+    HomeComponent,
+    ReactiveFormsComponent,
+    UtilsComponent,
+    DirectivesComponent,
+    ReusableComponent,
     // Header,
     // Footer,
   ],
@@ -107,33 +118,7 @@ import { DomHandler } from 'primeng/components/dom/domhandler';
     GrowlModule,
     ProgressBarModule,
     OrderListModule,
-    RouterModule.forRoot([
-      {
-        pathMatch: 'full',
-        path: 'component',
-        component: CourseComponent
-      },
-      {
-        pathMatch: 'full',
-        path: 'posts',
-        component: PostsComponent
-      },
-      {
-        pathMatch: 'full',
-        path: 'user',
-        component: UserComponent
-      },
-      {
-        pathMatch: 'full',
-        path: 'user/:userId',
-        component: UserDetailsComponent
-      },
-      {
-        pathMatch: 'full',
-        path: '**',
-        component: NotFoundComponent
-      },
-    ]),
+    RouterModule.forRoot(APP_ROUTES),
     DeferModule,
     DataListModule,
   ],

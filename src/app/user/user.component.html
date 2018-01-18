@@ -8,10 +8,9 @@
 
   <ul class="list-group">
     <li *ngFor="let user of users" class="list-group-item">
-      <a [routerLink]="['/user', user.id]" [queryParams]="{'userID':user.id}">
+      <a [routerLink]="[user.id]" [queryParams]="{'userID':user.id}">
         {{user.name}}
       </a>
     </li>
   </ul>
-
 </form>

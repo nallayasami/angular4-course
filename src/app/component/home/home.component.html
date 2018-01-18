@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <ul class="nav navbar-nav">
+        <li *ngFor="let option of selectionOptions" class="nav-item">
+          <a class="nav-item nav-link" [routerLink]="['/',option]">{{option | camelCaseSplit}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

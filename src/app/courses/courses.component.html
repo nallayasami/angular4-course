@@ -1,162 +1,71 @@
-<app-navbar [selection]="selection" (onClick)="onOptionSelection($event)"></app-navbar>
 <div class="container-fluid">
-  <div *ngIf="selection == 1">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Property Binding(value, class and style)</h3>
-      </div>
-      <div class="panel-collapse">
-        <div class="panel-body">
-          <div class="form-group">
-            <label for="input_two_way_binding" class="col-sm-2 control-label">TwoWaybinding:</label>
-            <div class="col-sm-10">
-              <input type="email" name="" id="input_two_way_binding" class="form-control" [(ngModel)]="emailId" required="required" title="">
-            </div>
-            <div class="col-sm-3"></div>
-            <span class="label label-info">{{emailId}}</span>
-
-          </div>
-
-        </div>
-        <div class="panel-footer">
-          <!-- one way property binding -->
-          <button type="button" class="btn btn-sm" [textContent]="buttonStr"></button>
-          <!-- class binding class.<<Style class name>> -->
-          <button type="button" class="btn btn-sm" [class.btn-primary]="primaryBtn">Class Biniding</button>
-          <!-- class binding Style binding (DOM css property) -->
-          <button type="button" class="btn btn-sm" [style.backgroundColor]="primaryBtn?'green':'blue'">Style Biniding</button>
-        </div>
-      </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Property Binding(value, class and style)</h3>
     </div>
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Event Binding</h3>
-      </div>
-      <div class="panel-collapse">
-        <div class="panel-body">
-          <div class="form-group">
-            <label for="input_EventBinding" class="col-sm-2 control-label">keyUPEvent:</label>
-            <div class="col-sm-10">
-              <input type="text" name="" id="input_EventBinding" class="form-control" value="" required="required" (keyup)="keyPressed($event)">
-            </div>
-            <label for="input_EventFilering" class="col-sm-2 control-label">keyFilterEvent:</label>
-            <div class="col-sm-10">
-              <input type="text" name="" id="input_EventFilering" class="form-control" value="" required="required" (keyup.enter)="enterKeyPressed()">
-            </div>
-            <label for="event_status" class="col-sm-2 control-label">EventStatus</label>
-            <div class="col-sm-10">
-              <input type="tel" name="" id="event_status" class="form-control" [value]="eventStatus" required="required" disabled="disabled">
-            </div>
-          </div>
-        </div>
-        <div class="panel-footer">
-          <button type="button" class="btn btn-sm " (click)="btnClicked()">Trigger Event</button>
-        </div>
-      </div>
-    </div>
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title" data-toggle="collapse">Template Variable Binding</h3>
-      </div>
-      <!-- Template bindig referes to an dom object helpful to simplify the code-->
-      <div class="panel-collapse">
-        <div class="panel-body">
-          <div class="form-group">
-            <label for="Template_binding" class="col-sm-2 control-label">keyUPEvent:</label>
-            <div class="col-sm-10">
-              <input type="text" name="" #inputVal id="input_TempBinding" class="form-control" value="" required="required" (keyup.enter)="templateVariable(inputVal.value)">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div *ngIf="selection == 2">
-    <app-pipe></app-pipe>
-  </div>
-  <div *ngIf="selection == 3">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Favorite Component container</h3>
-      </div>
-      <div class="panel-body">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" [(ngModel)]="reusableComponent.isFavorite"> IsFavorite inParent
-          </label>
-        </div>
-        <app-favorite [isFavorite]="reusableComponent.isFavorite" (change)="isFavoriteChanged($event)"></app-favorite>
-      </div>
-    </div>
-
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Like Coponent Container</h3>
-      </div>
+    <div class="panel-collapse">
       <div class="panel-body">
         <div class="form-group">
-          <label for="input_likeCount" class="col-sm-2 control-label">LikeCount:</label>
+          <label for="input_two_way_binding" class="col-sm-2 control-label">TwoWaybinding:</label>
           <div class="col-sm-10">
-            <input type="text" name="" id="input_likeCount" class="form-control" [(ngModel)]="likeComponent.likeCount" required="required"
-              pattern="" title="">
+            <input type="email" name="" id="input_two_way_binding" class="form-control" [(ngModel)]="emailId" required="required" title="">
+          </div>
+          <div class="col-sm-3"></div>
+          <span class="label label-info">{{emailId}}</span>
+
+        </div>
+
+      </div>
+      <div class="panel-footer">
+        <!-- one way property binding -->
+        <button type="button" class="btn btn-sm" [textContent]="buttonStr"></button>
+        <!-- class binding class.<<Style class name>> -->
+        <button type="button" class="btn btn-sm" [class.btn-primary]="primaryBtn">Class Biniding</button>
+        <!-- class binding Style binding (DOM css property) -->
+        <button type="button" class="btn btn-sm" [style.backgroundColor]="primaryBtn?'green':'blue'">Style Biniding</button>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Event Binding</h3>
+    </div>
+    <div class="panel-collapse">
+      <div class="panel-body">
+        <div class="form-group">
+          <label for="input_EventBinding" class="col-sm-2 control-label">keyUPEvent:</label>
+          <div class="col-sm-10">
+            <input type="text" name="" id="input_EventBinding" class="form-control" value="" required="required" (keyup)="keyPressed($event)">
+          </div>
+          <label for="input_EventFilering" class="col-sm-2 control-label">keyFilterEvent:</label>
+          <div class="col-sm-10">
+            <input type="text" name="" id="input_EventFilering" class="form-control" value="" required="required" (keyup.enter)="enterKeyPressed()">
+          </div>
+          <label for="event_status" class="col-sm-2 control-label">EventStatus</label>
+          <div class="col-sm-10">
+            <input type="tel" name="" id="event_status" class="form-control" [value]="eventStatus" required="required" disabled="disabled">
           </div>
         </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" [(ngModel)]="likeComponent.isLiked"> Is Liked
-          </label>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Like Component</h3>
-          </div>
-          <div class="panel-body">
-            <app-like [likeCount]="likeComponent.likeCount" [isLiked]="likeComponent.isLiked" (like)="likeBtnCliked($event)"></app-like>
+      </div>
+      <div class="panel-footer">
+        <button type="button" class="btn btn-sm " (click)="btnClicked()">Trigger Event</button>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title" data-toggle="collapse">Template Variable Binding</h3>
+    </div>
+    <!-- Template bindig referes to an dom object helpful to simplify the code-->
+    <div class="panel-collapse">
+      <div class="panel-body">
+        <div class="form-group">
+          <label for="Template_binding" class="col-sm-2 control-label">keyUPEvent:</label>
+          <div class="col-sm-10">
+            <input type="text" name="" #inputVal id="input_TempBinding" class="form-control" value="" required="required" (keyup.enter)="templateVariable(inputVal.value)">
           </div>
         </div>
       </div>
     </div>
-    <app-content>
-      <div class="header">ng-content</div>
-      <div class="body">ng-content with css selcctor</div>
-    </app-content>
-    <app-content>
-      <ng-container class="header">ng-content wiht ng-container</ng-container>
-      <ng-container class="body">ng-content + ng-container with css selcctor</ng-container>
-    </app-content>
-  </div>
-  <div *ngIf="selection == 4">
-    <app-custom-directive></app-custom-directive>
-    <app-interation></app-interation>
-    <app-show-or-hide></app-show-or-hide>
-    <app-swich-options></app-swich-options>
-    <app-style-and-class></app-style-and-class>
-  </div>
-  <div *ngIf="selection == 5">
-    <app-safe-traversal></app-safe-traversal>
-    <app-form-builder></app-form-builder>
-    <app-prime-order-list></app-prime-order-list>
-    <app-script-loading></app-script-loading>
-  </div>
-  <div *ngIf="selection == 6">
-    <app-template-driven-form></app-template-driven-form>
-  </div>
-  <div *ngIf="selection == 7">
-    <!--<app-reactive-form></app-reactive-form>
-      
-      <div class="page-header">
-      </div>
-    -->
-    <app-signup-form> </app-signup-form>
-    <app-reactive-array></app-reactive-array>
-  </div>
-  <div *ngIf="selection == 8">
-    <app-posts></app-posts>
-  </div>
-  <div *ngIf="selection == 9">
-    <app-course></app-course>
-  </div>
-  <div *ngIf="selection == 10">
-    <app-prime-defer></app-prime-defer>
   </div>
 </div>

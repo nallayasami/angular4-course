@@ -1,0 +1,49 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Favorite Component container</h3>
+  </div>
+  <div class="panel-body">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" [(ngModel)]="reusableComponent.isFavorite"> IsFavorite inParent
+      </label>
+    </div>
+    <app-favorite [isFavorite]="reusableComponent.isFavorite" (change)="isFavoriteChanged($event)"></app-favorite>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Like Coponent Container</h3>
+  </div>
+  <div class="panel-body">
+    <div class="form-group">
+      <label for="input_likeCount" class="col-sm-2 control-label">LikeCount:</label>
+      <div class="col-sm-10">
+        <input type="text" name="" id="input_likeCount" class="form-control" [(ngModel)]="likeComponent.likeCount" required="required"
+          pattern="" title="">
+      </div>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" [(ngModel)]="likeComponent.isLiked"> Is Liked
+      </label>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Like Component</h3>
+      </div>
+      <div class="panel-body">
+        <app-like [likeCount]="likeComponent.likeCount" [isLiked]="likeComponent.isLiked" (like)="likeBtnCliked($event)"></app-like>
+      </div>
+    </div>
+  </div>
+</div>
+<app-content>
+  <div class="header">ng-content</div>
+  <div class="body">ng-content with css selcctor</div>
+</app-content>
+<app-content>
+  <ng-container class="header">ng-content wiht ng-container</ng-container>
+  <ng-container class="body">ng-content + ng-container with css selcctor</ng-container>
+</app-content>

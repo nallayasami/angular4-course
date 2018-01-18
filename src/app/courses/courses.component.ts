@@ -20,9 +20,6 @@ export class CoursesComponent implements OnInit {
   courses: Array<String>;
   selection: CourseItem = CourseItem.LazyLoading;
 
-  reusableComponent: FavoriteComponentArgs = { isFavorite: false };
-  likeComponent: LikeComponentArgs = { isLiked: true, likeCount: 10 };
-
   constructor(service: CoursesServcie) {
     this.courses = service.getCourses();
   }
@@ -42,14 +39,7 @@ export class CoursesComponent implements OnInit {
     this.eventStatus = 'Template vaieable.value : '.concat(input);
   }
 
-  isFavoriteChanged(changeEvent: FavoriteComponentArgs) {
-    this.reusableComponent = changeEvent;
-  }
 
-  likeBtnCliked($event: LikeComponentArgs) {
-    console.log($event);
-    this.likeComponent = $event;
-  }
   onOptionSelection($event: CourseItem) {
     this.selection = $event;
   }

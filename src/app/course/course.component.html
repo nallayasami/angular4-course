@@ -1,13 +1,13 @@
-<nav class="navbar navbar-default" role="navigation">
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav">
-      <li  routerLinkActive="active">
+<div class="panel panel-default">
+  <div class="panel-body">
+    <ul class="nav nav-tabs">
+      <li class="nav-item" routerLinkActive="active">
         <a routerLink="user">users</a>
       </li>
-      <li  routerLinkActive="active">
-        <a  routerLink="posts">Posts</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a routerLink="posts">Posts</a>
       </li>
     </ul>
+    <router-outlet></router-outlet>
   </div>
-</nav>
-<router-outlet></router-outlet>
+</div>

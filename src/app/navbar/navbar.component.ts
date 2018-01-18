@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { CourseItem } from './../courseItem.eum';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
@@ -8,9 +9,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor( private router: Router) { }
 
-  @Input('selection') selection: CourseItem;
+  @Input() selection: CourseItem;
   @Output('onClick') onClick = new EventEmitter();
 
   selectionOptions: Array<string> = Object.keys(CourseItem).splice(Object.keys(CourseItem).length / 2, Object.keys(CourseItem).length - 1);
@@ -19,8 +20,9 @@ export class NavbarComponent implements OnInit {
   }
 
   onClicked(selection: CourseItem) {
+    this.router.navigate(['/', selection]);
     this.selection = selection;
-    this.onClick.emit(CourseItem[selection]);
+    // this.onClick.emit(CourseItem[selection]);
   }
 
   isSelected(option: string): boolean {
@@ -28,7 +30,8 @@ export class NavbarComponent implements OnInit {
   }
 
   getSelectionStr() {
-    return CourseItem[this.selection];
+    return this.selection;
+    // return CourseItem[this.selection];
   }
 }
 
