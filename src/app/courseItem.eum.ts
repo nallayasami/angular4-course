@@ -8,5 +8,6 @@ export enum CourseItem {
     ReactiveFroms = 7,
     HttpServices = 8,
     RoutingAndNavigation = 9,
-    LazyLoading = 10
+    LazyLoading = 10,
+    SearchComponent = 11
 }

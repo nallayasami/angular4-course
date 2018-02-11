@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { GrowlModule, ProgressBarModule, DeferModule, DataListModule, Header, Footer } from 'primeng/primeng';
+import { GrowlModule, ProgressBarModule, DeferModule, DataListModule, Header, Footer, FileUploadModule } from 'primeng/primeng';
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
@@ -61,6 +61,9 @@ import { ReactiveFormsComponent } from './component/reactive-forms/reactive-form
 import { UtilsComponent } from './component/utils/utils.component';
 import { DirectivesComponent } from './component/directives/directives.component';
 import { ReusableComponent } from './component/reusable/reusable.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { CardComponentComponent } from './card-component/card-component.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -106,6 +109,9 @@ import { ReusableComponent } from './component/reusable/reusable.component';
     UtilsComponent,
     DirectivesComponent,
     ReusableComponent,
+    FileUploadComponent,
+    CardComponentComponent,
+    SearchComponent,
     // Header,
     // Footer,
   ],
@@ -121,6 +127,7 @@ import { ReusableComponent } from './component/reusable/reusable.component';
     RouterModule.forRoot(APP_ROUTES),
     DeferModule,
     DataListModule,
+    FileUploadModule
   ],
   providers: [
     CoursesServcie,

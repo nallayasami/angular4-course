@@ -1,6 +1,5 @@
 import { Response } from '@angular/http';
-import { CarService } from './car.service';
-import { Car } from './../prime-order-list/prime-order-list.component';
+import { CarService, Car } from './car.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

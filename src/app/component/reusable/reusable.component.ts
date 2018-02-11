@@ -11,6 +11,7 @@ export class ReusableComponent implements OnInit {
 
   reusableComponent: FavoriteComponentArgs = { isFavorite: false };
   likeComponent: LikeComponentArgs = { isLiked: true, likeCount: 10 };
+  image: File;
 
   constructor() { }
 

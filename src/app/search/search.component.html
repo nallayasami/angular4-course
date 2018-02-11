@@ -1,0 +1,12 @@
+<form [formGroup]="fg">
+    <legend>Search Comp</legend>
+
+    <div class="form-group">
+        <label for="input">Search </label>
+        <input type="text" class="form-control" id="input" formControlName="input" placeholder="Input field" (keyup)="onKeypress()">
+    </div>
+    <div *ngFor="let car of cars">
+        <app-card-component [car]="car"></app-card-component>
+    </div>
+
+</form>

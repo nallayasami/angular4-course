@@ -1,0 +1,11 @@
+<div class="form-group">
+  <p-fileUpload mode="basic" customUpload="true" (uploadHandler)="upload($event, uploader)" auto=true [accept]="contentType"
+    #uploader [chooseLabel]="label">
+  </p-fileUpload>
+  <div class="media" *ngIf="content || contentUrl">
+    <img class="media-object mr-3" [src]="contentUrl">
+    <div class="media-body">
+      <h5 class="mt-0">{{content?.name}}</h5>
+    </div>
+  </div>
+</div>

@@ -8,7 +8,7 @@ export class CarService {
 
   constructor(private http: Http) { }
 
-  getCarsLarge() {
+  getCarsLarge(): Car[] {
     // const headers: Headers = new Headers();
     // headers.append('Access-Control-Allow-Origin', '*');
     // headers.append('Accept', 'application/json');
@@ -144,7 +144,6 @@ export class CarService {
         }
       ]
   } `).data;
-
   }
 
 }

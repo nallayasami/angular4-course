@@ -14,6 +14,7 @@ import { HomeComponent } from './component/home/home.component';
 import { ReactiveFormsComponent } from './component/reactive-forms/reactive-forms.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { PipeComponent } from './pipe/pipe.component';
+import { SearchComponent } from './search/search.component';
 
 export const APP_ROUTES: Routes = [
     {
@@ -78,6 +79,10 @@ export const APP_ROUTES: Routes = [
     {
         path: 'LazyLoading',
         component: PrimeDeferComponent
+    },
+    {
+        path: 'SearchComponent',
+        component: SearchComponent
     },
     {
         path: '**',
