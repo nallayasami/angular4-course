@@ -35,9 +35,9 @@ export class DataService {
     return this.http
       .get(this.url)
       .catch(this.handleError);
-        // .map((response: Response) => {
-        //   return response.json();
-        // })
+    // .map((response: Response) => {
+    //   return response.json();
+    // })
   }
   get(id: any) {
     return this.http
@@ -51,6 +51,10 @@ export class DataService {
   delete(id) {
     // return Observable.throw(new BaseError());
     return this.http.delete(this.url + id).catch(this.handleError);
+  }
+
+  queryInput(query: string) {
+    return this.http.get(this.url, { 'params': { 'q': query } }).catch(this.handleError);
   }
 
   private handleError(error: Response): ErrorObservable {

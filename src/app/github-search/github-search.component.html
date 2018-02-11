@@ -1,0 +1,7 @@
+<div tabindex="-1" *ngIf="display" class="panel">
+  <a class="glyphicon glyphicon-icon glyphicon-remove float-right" aria-hidden="true" (click)="reset()"></a>
+
+  <h3 class="panel-title">Showing results for {{query}}...</h3>
+
+  <ng-content></ng-content>
+</div>

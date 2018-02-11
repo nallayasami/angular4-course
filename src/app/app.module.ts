@@ -1,3 +1,4 @@
+import { GitService } from './common/service/git-service';
 import { TemplateRef } from '@angular/core';
 import { ServiceStatusService } from './common/service/service-status.service';
 import { MessageService } from 'primeng/components/common/messageservice';
@@ -64,6 +65,8 @@ import { ReusableComponent } from './component/reusable/reusable.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { CardComponentComponent } from './card-component/card-component.component';
 import { SearchComponent } from './search/search.component';
+import { GithubSearchComponent } from './github-search/github-search.component';
+import { GithubUserComponent } from './github-user/github-user.component';
 
 
 @NgModule({
@@ -112,6 +115,8 @@ import { SearchComponent } from './search/search.component';
     FileUploadComponent,
     CardComponentComponent,
     SearchComponent,
+    GithubSearchComponent,
+    GithubUserComponent,
     // Header,
     // Footer,
   ],
@@ -138,6 +143,7 @@ import { SearchComponent } from './search/search.component';
     MessageServiceService,
     CarService,
     DomHandler,
+    GitService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: CustomInterceptor,

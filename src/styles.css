@@ -61,3 +61,18 @@ p-progressbar{
 .app-lazy-load{
     height: 1px;
 }
+
+.bottom-panel {
+    overflow: scroll;
+    position: fixed;
+    top: 220px;
+    max-height: calc( 100% - 220px);
+    height: calc( 100% - 220px);
+    width: calc( 100% - 15px);;
+}
+
+.float-right{
+    position: fixed;
+    top: 220px;
+    right: 40px;
+}
