@@ -1,6 +1,6 @@
 import { GitService } from './../common/service/git-service';
 import { CarService, Car } from './../prime-defer/car.service';
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChildren, ElementRef, QueryList } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { GitUser } from '../github-user/github-user.component';
 
@@ -29,7 +29,7 @@ export class SearchComponent implements OnInit, OnDestroy {
       'userName': fb.control('', []),
     });
   }
-  @ViewChild('staticBody') body: ElementRef;
+  @ViewChildren('searchToggle') searchToggle: QueryList<ElementRef>;
 
   get input() {
     return this.fg.get('input');
@@ -42,7 +42,6 @@ export class SearchComponent implements OnInit, OnDestroy {
   resetQuery() {
     console.log('resetting value');
     this.fg.get('userName').setValue('');
-    console.log(this.body.nativeElement);
   }
 
   onKeypress() {
@@ -66,9 +65,11 @@ export class SearchComponent implements OnInit, OnDestroy {
           return Observable.of(null);
         }
       }).subscribe((response) => {
-        if (this.body.nativeElement) {
-          (this.body.nativeElement as HTMLElement).classList.toggle('hidden', this.display);
-        }
+        this.searchToggle.forEach(item => {
+          if (item.nativeElement) {
+            (item.nativeElement as HTMLElement).classList.toggle('hidden', this.display);
+          }
+        });
         if (response) {
           this.users = response.items;
         }
