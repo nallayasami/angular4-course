@@ -2,16 +2,17 @@
     <legend>Search Comp overlay</legend>
     <div class="form-group">
         <label for="userName">Github Search </label>
-        <input type="text" class="form-control" autocomplete="off" id="userName" formControlName="userName" placeholder="Input field"
-            (keyup)="showPanel()">
+        <input type="text" class="form-control" autocomplete="off" id="userName" formControlName="userName" placeholder="Input field">
     </div>
-    <legend>Search Comp static</legend>
-    <div class="form-group">
-        <label for="input">Search </label>
-        <input type="text" class="form-control" id="input" formControlName="input" placeholder="Input field" (keyup)="onKeypress()">
-    </div>
-    <div *ngFor="let car of cars">
-        <app-card-component [car]="car"></app-card-component>
+    <div #staticBody>
+        <legend>Search Comp static</legend>
+        <div class="form-group">
+            <label for="input">Search </label>
+            <input type="text" class="form-control" id="input" formControlName="input" placeholder="Input field" (keyup)="onKeypress()">
+        </div>
+        <div *ngFor="let car of cars">
+            <app-card-component [car]="car"></app-card-component>
+        </div>
     </div>
 </form>
 

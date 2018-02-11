@@ -1,6 +1,6 @@
 import { GitService } from './../common/service/git-service';
 import { CarService, Car } from './../prime-defer/car.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { GitUser } from '../github-user/github-user.component';
 
@@ -22,12 +22,14 @@ export class SearchComponent implements OnInit, OnDestroy {
   users: GitUser[];
   display: boolean;
   valueChange: Subscription;
+
   constructor(private fb: FormBuilder, private service: CarService, private gitService: GitService) {
     this.fg = fb.group({
       'input': fb.control('', []),
       'userName': fb.control('', []),
     });
   }
+  @ViewChild('staticBody') body: ElementRef;
 
   get input() {
     return this.fg.get('input');
@@ -40,6 +42,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   resetQuery() {
     console.log('resetting value');
     this.fg.get('userName').setValue('');
+    console.log(this.body.nativeElement);
   }
 
   onKeypress() {
@@ -49,12 +52,6 @@ export class SearchComponent implements OnInit, OnDestroy {
     });
   }
 
-  showPanel() {
-    if ((this.userName.value as string).length > 3) {
-      this.display = true;
-    }
-  }
-
   ngOnInit() {
     this.cars = this.service.getCarsLarge();
 
@@ -62,11 +59,16 @@ export class SearchComponent implements OnInit, OnDestroy {
       .flatMap((val: string) => {
         console.log(val);
         if (val.length > 3) {
+          this.display = true;
           return this.gitService.queryInput(val);
         } else {
+          this.display = false;
           return Observable.of(null);
         }
       }).subscribe((response) => {
+        if (this.body.nativeElement) {
+          (this.body.nativeElement as HTMLElement).classList.toggle('hidden', this.display);
+        }
         if (response) {
           this.users = response.items;
         }
