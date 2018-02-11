@@ -1,3 +1,15 @@
+@angular/common@5.1.3
+MIT
+MIT
+
+@angular/core@5.1.3
+MIT
+MIT
+
+@angular/platform-browser@5.1.3
+MIT
+MIT
+
 primeng@5.0.2
 MIT
 The MIT License (MIT)
@@ -23,18 +35,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 @angular/forms@5.1.3
-MIT
-MIT
-
-@angular/core@5.1.3
-MIT
-MIT
-
-@angular/platform-browser@5.1.3
-MIT
-MIT
-
-@angular/common@5.1.3
 MIT
 MIT
 
