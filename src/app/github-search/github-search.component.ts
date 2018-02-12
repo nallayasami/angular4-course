@@ -20,7 +20,6 @@ export class GithubSearchComponent implements OnInit {
 
   @HostListener('window:keyup', ['$event'])
   onEsc($event: KeyboardEvent) {
-    console.log($event.keyCode);
     if ($event.keyCode === 27) {
       this.reset();
     }
