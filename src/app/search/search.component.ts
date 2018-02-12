@@ -57,7 +57,8 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.cars = this.service.getCarsLarge();
 
     this.valueChange = this.userName.valueChanges
-      .debounce(() => Observable.timer(500))
+      // .debounce(() => Observable.timer(500))
+      .debounceTime(300)
       .flatMap((val: string) => {
         if (val.length > 3) {
           this.display = true;
