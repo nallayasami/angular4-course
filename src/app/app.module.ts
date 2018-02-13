@@ -67,6 +67,7 @@ import { CardComponentComponent } from './card-component/card-component.componen
 import { SearchComponent } from './search/search.component';
 import { GithubSearchComponent } from './github-search/github-search.component';
 import { GithubUserComponent } from './github-user/github-user.component';
+import { PaymentGetwayComponent } from './payment-getway/payment-getway.component';
 
 
 @NgModule({
@@ -117,6 +118,7 @@ import { GithubUserComponent } from './github-user/github-user.component';
     SearchComponent,
     GithubSearchComponent,
     GithubUserComponent,
+    PaymentGetwayComponent,
     // Header,
     // Footer,
   ],
