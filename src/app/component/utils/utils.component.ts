@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UtilsComponent implements OnInit {
 
+  input: number;
   constructor() { }
 
   ngOnInit() {
