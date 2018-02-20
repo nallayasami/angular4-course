@@ -15,6 +15,7 @@ import { ReactiveFormsComponent } from './component/reactive-forms/reactive-form
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { SearchComponent } from './search/search.component';
+import { PrimeDialogComponent } from './prime-dialog/prime-dialog.component';
 
 export const APP_ROUTES: Routes = [
     {
@@ -83,6 +84,10 @@ export const APP_ROUTES: Routes = [
     {
         path: 'SearchComponent',
         component: SearchComponent
+    },
+    {
+        path: 'DialogComponent',
+        component: PrimeDialogComponent
     },
     {
         path: '**',

@@ -4,11 +4,15 @@ import { ServiceStatusService } from './common/service/service-status.service';
 import { MessageService } from 'primeng/components/common/messageservice';
 import { CoursesServcie } from './courses/courses.service';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { GrowlModule, ProgressBarModule, DeferModule, DataListModule, Header, Footer, FileUploadModule } from 'primeng/primeng';
+import {
+  GrowlModule, ProgressBarModule, DeferModule, DataListModule, Header,
+  Footer, FileUploadModule, DialogModule, ConfirmDialogModule
+} from 'primeng/primeng';
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
@@ -68,6 +72,8 @@ import { SearchComponent } from './search/search.component';
 import { GithubSearchComponent } from './github-search/github-search.component';
 import { GithubUserComponent } from './github-user/github-user.component';
 import { PaymentGetwayComponent } from './payment-getway/payment-getway.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { PrimeDialogComponent } from './prime-dialog/prime-dialog.component';
 
 
 @NgModule({
@@ -119,11 +125,14 @@ import { PaymentGetwayComponent } from './payment-getway/payment-getway.componen
     GithubSearchComponent,
     GithubUserComponent,
     PaymentGetwayComponent,
+    DialogComponent,
+    PrimeDialogComponent
     // Header,
     // Footer,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
@@ -134,7 +143,9 @@ import { PaymentGetwayComponent } from './payment-getway/payment-getway.componen
     RouterModule.forRoot(APP_ROUTES),
     DeferModule,
     DataListModule,
-    FileUploadModule
+    FileUploadModule,
+    DialogModule,
+    ConfirmDialogModule
   ],
   providers: [
     CoursesServcie,
