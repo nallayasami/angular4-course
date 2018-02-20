@@ -1,7 +1,6 @@
-<p-dialog [(visible)]="visible" (onHide)="onHide()">
-  <ng-content></ng-content>
+<p-dialog *ngIf="message" [(visible)]="visible" (onHide)="onHide()">
+  {{message.message}}
   <p-footer>
     <button type="button" class="btn btn-default" (click) = "onHide()">Ok</button>
   </p-footer>
 </p-dialog>
-<button (click) = "show()">Show</button>

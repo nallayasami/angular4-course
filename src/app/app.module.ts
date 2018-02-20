@@ -1,3 +1,4 @@
+import { ConfirmMessageService } from './servcie/confirm-message.service';
 import { GitService } from './common/service/git-service';
 import { TemplateRef } from '@angular/core';
 import { ServiceStatusService } from './common/service/service-status.service';
@@ -74,6 +75,7 @@ import { GithubUserComponent } from './github-user/github-user.component';
 import { PaymentGetwayComponent } from './payment-getway/payment-getway.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { PrimeDialogComponent } from './prime-dialog/prime-dialog.component';
+import { RedirectComponent } from './redirect/redirect.component';
 
 
 @NgModule({
@@ -126,7 +128,8 @@ import { PrimeDialogComponent } from './prime-dialog/prime-dialog.component';
     GithubUserComponent,
     PaymentGetwayComponent,
     DialogComponent,
-    PrimeDialogComponent
+    PrimeDialogComponent,
+    RedirectComponent
     // Header,
     // Footer,
   ],
@@ -157,6 +160,7 @@ import { PrimeDialogComponent } from './prime-dialog/prime-dialog.component';
     CarService,
     DomHandler,
     GitService,
+    ConfirmMessageService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: CustomInterceptor,

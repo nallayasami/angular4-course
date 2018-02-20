@@ -1,3 +1,4 @@
+import { RedirectComponent } from './redirect/redirect.component';
 import { CoursesComponent } from './courses/courses.component';
 import { ReusableComponent } from './component/reusable/reusable.component';
 import { DirectivesComponent } from './component/directives/directives.component';
@@ -22,6 +23,11 @@ export const APP_ROUTES: Routes = [
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',
+    },
+    {
+        path: 'redirect',
+        pathMatch: 'full',
+        component: RedirectComponent
     },
     {
         path: 'home',

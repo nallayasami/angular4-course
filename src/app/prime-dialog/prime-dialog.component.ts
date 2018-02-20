@@ -1,3 +1,4 @@
+import { ConfirmMessageService, ConfrimMessage } from './../servcie/confirm-message.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrimeDialogComponent implements OnInit {
 
-  constructor() { }
+  message: string = 'Welcome';
+  navigate: string = '/';
+  constructor(private messageService: ConfirmMessageService) { }
 
   ngOnInit() {
+  }
+
+  addMessage() {
+    this.messageService.addMessage(new ConfrimMessage(this.message, this.navigate));
   }
 
 }
