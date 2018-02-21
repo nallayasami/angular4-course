@@ -34,7 +34,9 @@ export class DialogComponent implements OnInit, OnDestroy {
     const url = this.message.navigation;
     this.visible = false;
     this.message = null;
-    this.router.navigate([url], { queryParams: { url: url } });
+    if (url) {
+      this.router.navigate([url], { queryParams: { url: url } });
+    }
   }
 
   private showDialog() {
