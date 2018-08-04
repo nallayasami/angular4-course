@@ -14,7 +14,22 @@ export class SlotManagerComponent implements OnInit {
   }
 
   addSlot() {
-    this.slots.push(new Slot('Value ' + (this.slots.length + 1), '', 10, 10));
+    this.slots.push(new Slot('Slot ' + (this.slots.length + 1), '', 10));
+  }
+
+  delete(i) {
+    this.slots.splice(i, 1);
+    this.slots.forEach((val: Slot, index: number) => {
+      val.name = 'slot ' + (index + 1);
+    });
+  }
+
+  get available() {
+    let total = 0;
+    this.slots.forEach((val: Slot, index: number) => {
+      total += val.available;
+    });
+    return total;
   }
 
 }
@@ -22,14 +37,14 @@ export class SlotManagerComponent implements OnInit {
 export class Slot {
   name: String;
   room: String;
-  size: number;
-  avialable: number;
+  total: number;
+  available: number;
 
-  constructor(name: string, room: string, size: number, available: number) {
+  constructor(name: string, room: string, total: number) {
     this.name = name;
     this.room = room;
-    this.size = size;
-    this.avialable = available;
+    this.total = total;
+    this.available = total;
   }
 
 }
