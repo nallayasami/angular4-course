@@ -76,6 +76,7 @@ import { PaymentGetwayComponent } from './payment-getway/payment-getway.componen
 import { DialogComponent } from './components/dialog/dialog.component';
 import { PrimeDialogComponent } from './prime-dialog/prime-dialog.component';
 import { RedirectComponent } from './redirect/redirect.component';
+import { SlotManagerComponent } from './slot-manager/slot-manager.component';
 
 
 @NgModule({
@@ -129,7 +130,8 @@ import { RedirectComponent } from './redirect/redirect.component';
     PaymentGetwayComponent,
     DialogComponent,
     PrimeDialogComponent,
-    RedirectComponent
+    RedirectComponent,
+    SlotManagerComponent
     // Header,
     // Footer,
   ],

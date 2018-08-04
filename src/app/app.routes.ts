@@ -17,6 +17,7 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
 import { PipeComponent } from './pipe/pipe.component';
 import { SearchComponent } from './search/search.component';
 import { PrimeDialogComponent } from './prime-dialog/prime-dialog.component';
+import { SlotManagerComponent } from './slot-manager/slot-manager.component';
 
 export const APP_ROUTES: Routes = [
     {
@@ -94,6 +95,10 @@ export const APP_ROUTES: Routes = [
     {
         path: 'DialogComponent',
         component: PrimeDialogComponent
+    },
+    {
+        path: 'SlotManager',
+        component: SlotManagerComponent
     },
     {
         path: '**',

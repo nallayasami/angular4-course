@@ -36,7 +36,6 @@ export class DialogComponent implements OnInit, OnDestroy {
     this.message = null;
     this.router.navigate(['/redirect'], { queryParams: { url: url } });
   }
-  }
 
   private showDialog() {
     this.visible = true;

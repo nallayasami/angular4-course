@@ -10,5 +10,6 @@ export enum CourseItem {
     RoutingAndNavigation = 9,
     LazyLoading = 10,
     SearchComponent = 11,
-    DialogComponent = 12
+    DialogComponent = 12,
+    SlotManager = 13
 }
