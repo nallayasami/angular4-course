@@ -27,7 +27,7 @@ export class SlotManagerComponent implements OnInit {
   get available() {
     let total = 0;
     this.slots.forEach((val: Slot, index: number) => {
-      total += val.available;
+      total += val.total;
     });
     return total;
   }
