@@ -1,7 +1,6 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title">Slot Manger</h3>
-  </div>
+<form [formGroup]="fg">
+  <legend>Slot Manager</legend>
+
   <div class="panel-body">
     <span>
       <button type="button" (click)="addSlot();" class="btn btn-primary glyphicon glyphicon-plus">
@@ -11,34 +10,43 @@
 
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">No of Slots : {{slots.length}} - Avaialbe : {{available}}</h3>
+        <!-- <h3 class="panel-title">No of Slots : {{slots.length}} - Avaialbe : {{available}}</h3> -->
       </div>
       <div class="panel-body">
-        <div>
+        <div formGroupName="slots">
           <ul class="list-group">
-            <li *ngFor="let slot of slots; index as i;" class="list-group-item">
-              <div class="form-group">
-                <span class="label label-info">{{slot.name}}</span>
-                <span>
+            <li *ngFor="let slot of slots.controls; index as i;" class="list-group-item">
+              <div class="form-group slot-data" [formGroupName]="i">
+                <!-- <span class="label label-info">{{slot.name.value}}</span> -->
+                <div>
+                  <!-- <label for="slot-name">Name: </label> -->
+                  <input type="text" id="slot-name" formControlName="name" >
+                </div>
+                <div>
                   <label for="room-id">Room name: </label>
-                  <input type="text" id="room-id" [(value)]="slot.room" placeholder="Room name">
-                </span>
-                <span>
+                  <input type="text" id="room-id" formControlName="room">
+                </div>
+                <div>
+                  <label for="time-id">Time Slot: </label>
+                  <p-calendar formControlName="time" hourFormat="24" timeOnly="true"></p-calendar>                  
+                </div>
+                <div>
                   <label for="total-id">Total : </label>
-                  <input type="number" id="total-id" [(value)]="slot.total">
-                </span>
-                <span>
+                  <input type="number" id="total-id" formControlName="total">
+                </div>
+                <div>
                   <label for="available-id">Available : </label>
-                  <input type="number" id="available-id" [value]="slot.available" disabled>
-                </span>
-                <span class="glyphicon glyphicon-trash" aria-hidden="true" (click)="delete(i)"></span>
+                  <input type="number" id="available-id" formControlName="available">
+                </div>
+                <div>
+                  <span class="glyphicon glyphicon-trash" aria-hidden="true" (click)="delete(i)">Delete</span>
+                </div>
               </div>
             </li>
           </ul>
         </div>
       </div>
     </div>
-
-
   </div>
-</div>
+  <button type="submit" class="btn btn-primary" (click)="saveSlots()">Save</button>
+</form>

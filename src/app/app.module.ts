@@ -12,7 +12,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import {
   GrowlModule, ProgressBarModule, DeferModule, DataListModule, Header,
-  Footer, FileUploadModule, DialogModule, ConfirmDialogModule
+  Footer, FileUploadModule, DialogModule, ConfirmDialogModule, CalendarModule
 } from 'primeng/primeng';
 
 import { AppComponent } from './app.component';
@@ -150,7 +150,8 @@ import { SlotManagerComponent } from './slot-manager/slot-manager.component';
     DataListModule,
     FileUploadModule,
     DialogModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    CalendarModule
   ],
   providers: [
     CoursesServcie,
