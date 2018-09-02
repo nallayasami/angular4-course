@@ -29,7 +29,7 @@ export class SlotManagerComponent implements OnInit {
         'room': this.fb.control('', []),
         'time': this.fb.control('', []),
         'total': this.fb.control(10, []),
-        'available': this.fb.control(0, [])
+        'available': this.fb.control({ value: 10, disabled: true }, [])
       });
   }
 
