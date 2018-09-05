@@ -7,7 +7,7 @@ import { GitUser } from '../github-user/github-user.component';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
-import 'rxjs/add/operator/debounce';
+import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/timer';
 import { Subscription } from 'rxjs/Subscription';
@@ -57,7 +57,6 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.cars = this.service.getCarsLarge();
 
     this.valueChange = this.userName.valueChanges
-      // .debounce(() => Observable.timer(500))
       .debounceTime(300)
       .flatMap((val: string) => {
         if (val.length > 3) {
