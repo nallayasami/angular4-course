@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { environment } from './../../environments/environment';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
 @Component({
@@ -8,6 +9,12 @@ import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 })
 export class SlotManagerComponent implements OnInit {
 
+  event: string;
+  competition: string;
+  total: number;
+  available: number;
+
+
   // slots = [];
   fg: FormGroup;
   constructor(private fb: FormBuilder) {
@@ -15,11 +22,13 @@ export class SlotManagerComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.competition = 'competitionId';
+    this.event = 'eventId';
   }
 
   addSlot() {
     this.slots.push(this.createSlot());
-    // this.slots.push(new Slot('Slot ' + (this.slots.length + 1), '', 10));
+    this.updateSlotCount();
   }
 
   private createSlot() {
@@ -29,23 +38,20 @@ export class SlotManagerComponent implements OnInit {
         'room': this.fb.control('', []),
         'time': this.fb.control('', []),
         'total': this.fb.control(10, []),
-        'available': this.fb.control({ value: 10, disabled: true }, [])
+        'available': this.fb.control({ value: 10, disabled: true }, []),
+        'event': this.fb.control(this.event),
+        'competition': this.fb.control(this.competition)
       });
+  }
+
+  onTotalChange($event, index: number) {
+    console.log(this.slots.controls[index]);
+    this.slots.controls[index].get('available').setValue($event.target.value);
+    this.updateSlotCount();
   }
 
   delete(i) {
     this.slots.controls.splice(i, 1);
-    // this.slots.forEach((val: Slot, index: number) => {
-    //   val.name = 'slot ' + (index + 1);
-    // });
-  }
-
-  get available() {
-    let total = 0;
-    // this.slots.forEach((val: Slot, index: number) => {
-    //   total += val.total;
-    // });
-    return total;
   }
 
   get slots() {
@@ -53,7 +59,16 @@ export class SlotManagerComponent implements OnInit {
   }
 
   public saveSlots() {
-    console.log(this.slots.value);
+    this.updateSlotCount();
+    console.log(this.slots.getRawValue());
+  }
+  private updateSlotCount() {
+    this.total = 0;
+    this.available = 0;
+    this.slots.getRawValue().forEach((slot: Slot) => {
+      this.total += +slot.total;
+      this.available += +slot.available;
+    });
   }
 
 }
@@ -64,12 +79,16 @@ export class Slot {
   time: String;
   total: number;
   available: number;
+  event: string;
+  competition: string;
 
-  constructor(name: string, room: string, total: number) {
+  constructor(name: string, room: string, total: number, event: string, competition: string) {
     this.name = name;
     this.room = room;
     this.total = total;
     this.available = total;
+    this.event = event;
+    this.competition = competition;
   }
 
 }

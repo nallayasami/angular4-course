@@ -1,3 +1,4 @@
+import { MessageService } from 'primeng/components/common/messageservice';
 import { MessageServiceService } from './common/service/message-service.service';
 import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
 import { Message } from 'primeng/primeng';
@@ -16,6 +17,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(private serviceStatus: ServiceStatusService,
     private message: MessageServiceService,
+    private messageService: MessageService,
     private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
@@ -27,6 +29,11 @@ export class AppComponent implements OnInit, OnDestroy {
       // console.log('state msg', state);
       if (state) {
         this.msgs.push(state);
+        const msgAry = this.msgs;
+        setTimeout(() => {
+          msgAry.splice(msgAry.indexOf(state), 1);
+        }, 3000);
+        // this.messageService.add({})
       }
       this.cdr.detectChanges();
     });

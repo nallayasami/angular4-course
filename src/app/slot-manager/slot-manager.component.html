@@ -10,7 +10,7 @@
 
     <div class="panel panel-default">
       <div class="panel-heading">
-        <!-- <h3 class="panel-title">No of Slots : {{slots.length}} - Avaialbe : {{available}}</h3> -->
+        <h3 class="panel-title">No of Slots : {{slots.length}} - Total : {{total}} - Avaialbe : {{available}}</h3>
       </div>
       <div class="panel-body">
         <div formGroupName="slots">
@@ -32,7 +32,7 @@
                 </div>
                 <div>
                   <label for="total-id">Total : </label>
-                  <input type="number" id="total-id" formControlName="total">
+                  <input type="number" id="total-id" formControlName="total" (change)="onTotalChange($event,i);">
                 </div>
                 <div>
                   <label for="available-id">Available : </label>

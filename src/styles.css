@@ -76,3 +76,7 @@ p-progressbar{
     top: 220px;
     right: 40px;
 }
+
+p-growl>div.ui-growl.ui-widget{
+    z-index: 10000 !important ;
+}
