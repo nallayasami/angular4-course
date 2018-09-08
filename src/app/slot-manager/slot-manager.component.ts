@@ -34,7 +34,7 @@ export class SlotManagerComponent implements OnInit {
   private createSlot() {
     return this.fb.group(
       {
-        'name': this.fb.control({ value: 'slot', disabled: true }, []),
+        // 'name': this.fb.control({ value: 'slot', disabled: true }, []),
         'room': this.fb.control('', []),
         'time': this.fb.control('', []),
         'total': this.fb.control(10, []),
@@ -45,13 +45,13 @@ export class SlotManagerComponent implements OnInit {
   }
 
   onTotalChange($event, index: number) {
-    console.log(this.slots.controls[index]);
     this.slots.controls[index].get('available').setValue($event.target.value);
     this.updateSlotCount();
   }
 
-  delete(i) {
-    this.slots.controls.splice(i, 1);
+  delete(index) {
+    this.slots.controls.splice(index, 1);
+    this.updateSlotCount();
   }
 
   get slots() {

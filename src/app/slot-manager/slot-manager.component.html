@@ -17,17 +17,18 @@
           <ul class="list-group">
             <li *ngFor="let slot of slots.controls; index as i;" class="list-group-item">
               <div class="form-group slot-data" [formGroupName]="i">
-                <!-- <span class="label label-info">{{slot.name.value}}</span> -->
-                <div>
+                <h4 style="display: inline">{{i+1}}:</h4>
+                <!-- <span class="label header"></span> -->
+                <!-- <div> -->
                   <!-- <label for="slot-name">Name: </label> -->
-                  <input type="text" id="slot-name" formControlName="name">
-                </div>
+                  <!-- <input type="text" id="slot-name" formControlName="name"> -->
+                <!-- </div> -->
                 <div>
                   <label for="room-id">Room name: </label>
                   <input type="text" id="room-id" formControlName="room">
                 </div>
                 <div>
-                  <label for="time-id">Time Slot: </label>
+                  <label for="time-id">Time : </label>
                   <input type="time" id="time-id" formControlName="time" value="" required="required">
                 </div>
                 <div>

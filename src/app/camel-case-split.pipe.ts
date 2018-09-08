@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class CamelCaseSplitPipe implements PipeTransform {
 
   transform(value: String, args?: any): any {
-    console.log(value);
     if (!value) {
       return null;
     }
