@@ -77,6 +77,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { PrimeDialogComponent } from './prime-dialog/prime-dialog.component';
 import { RedirectComponent } from './redirect/redirect.component';
 import { SlotManagerComponent } from './slot-manager/slot-manager.component';
+import { TimerComponent } from './timer/timer.component';
 
 
 @NgModule({
@@ -131,7 +132,8 @@ import { SlotManagerComponent } from './slot-manager/slot-manager.component';
     DialogComponent,
     PrimeDialogComponent,
     RedirectComponent,
-    SlotManagerComponent
+    SlotManagerComponent,
+    TimerComponent
     // Header,
     // Footer,
   ],
