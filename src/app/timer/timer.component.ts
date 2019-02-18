@@ -23,7 +23,6 @@ export class TimerComponent implements OnInit, OnDestroy {
   }
 
   updateTime() {
-    console.log(this.duration);
     this.displayTime = new Date(null);
     this.displayTime.setSeconds(+localStorage.getItem('currentTime'));
   }
