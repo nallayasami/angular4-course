@@ -1,3 +1,21 @@
-<p>
-  timer works!
-</p>
+<app-content>
+  <ng-container class="header">
+    Count Down
+  </ng-container>
+  <ng-container class="body">
+
+      <div class="form-group">
+          <label for="amount">Seconds: </label>
+          <input type="number" [(ngModel)]="duration" id="amount" (ngModelChange)="reset()" [min]="1" [max]="3599">
+      </div>
+
+    <div class="form-group">
+      {{timer}}
+    </div>
+  </ng-container>
+  <ng-container class="footer">
+    <button type="button" class="btn btn-primary" (click)="start()">Start</button>
+    <button type="button" class="btn btn-default" (click)="pause()">Pause</button>
+    <button type="button" class="btn btn-default" (click)="reset()">Reset</button>
+  </ng-container>
+</app-content>

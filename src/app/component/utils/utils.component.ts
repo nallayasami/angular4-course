@@ -12,5 +12,8 @@ export class UtilsComponent implements OnInit {
 
   ngOnInit() {
   }
+  trigger() {
+    console.log('trigger invoked');
+  }
 
 }
