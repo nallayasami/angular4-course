@@ -58,7 +58,6 @@ export class TimerComponent implements OnInit, OnDestroy {
     const source = timer(0, 1000);
     // let duration = localStorage.getItem('currentTime') || 0;
     this.timerSubscription = source.subscribe(val => {
-      console.log('val', val);
       let countdown = +localStorage.getItem('currentTime') - 1;
       if(countdown <= 0) {
         this.triggerEvent();
@@ -70,7 +69,6 @@ export class TimerComponent implements OnInit, OnDestroy {
   }
 
   triggerEvent() {
-    console.log('triggerEvent');
     this.resetSubscription();
     this.trigger.emit();
   }
