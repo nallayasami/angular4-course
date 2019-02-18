@@ -43,7 +43,8 @@ export class TimerComponent implements OnInit, OnDestroy {
     this.resetSubscription();
   }
 
-  reset() {
+  reset($event) {
+    if($event > 3599) this.duration = 3599;
     localStorage.setItem('currentTime', (this.duration||0).toString());
     this.resetSubscription();
     this.updateTime();
