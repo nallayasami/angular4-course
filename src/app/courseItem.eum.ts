@@ -11,5 +11,6 @@ export enum CourseItem {
     LazyLoading = 10,
     SearchComponent = 11,
     DialogComponent = 12,
-    SlotManager = 13
+    SlotManager = 13,
+    TicketBooking = 15,
 }

@@ -1,3 +1,4 @@
+import { TicketBookingComponent } from './ticket-booking/ticket-booking.component';
 import { RedirectComponent } from './redirect/redirect.component';
 import { CoursesComponent } from './courses/courses.component';
 import { ReusableComponent } from './component/reusable/reusable.component';
@@ -99,6 +100,10 @@ export const APP_ROUTES: Routes = [
     {
         path: 'SlotManager',
         component: SlotManagerComponent
+    },
+    {
+        path: 'TicketBooking',
+        component: TicketBookingComponent
     },
     {
         path: '**',

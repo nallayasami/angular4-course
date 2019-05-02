@@ -1,0 +1,8 @@
+<div class="form-group">
+  <div class="form-group">
+    <label for="layout">Layout</label>
+    <textarea class="form-control" name="layout" id="layout" rows="3" (change)="onLayoutChange($event)"></textarea>
+  </div>
+  <small id="helpId" class="text-muted">Enter the Json Input</small>
+</div>
+<app-builing-layout [(bluePrint)]="bluePrint"></app-builing-layout>

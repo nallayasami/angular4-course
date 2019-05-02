@@ -78,6 +78,8 @@ import { PrimeDialogComponent } from './prime-dialog/prime-dialog.component';
 import { RedirectComponent } from './redirect/redirect.component';
 import { SlotManagerComponent } from './slot-manager/slot-manager.component';
 import { TimerComponent } from './timer/timer.component';
+import { TicketBookingComponent } from './ticket-booking/ticket-booking.component';
+import { BuilingLayoutComponent } from './builing-layout/builing-layout.component';
 
 
 @NgModule({
@@ -133,7 +135,9 @@ import { TimerComponent } from './timer/timer.component';
     PrimeDialogComponent,
     RedirectComponent,
     SlotManagerComponent,
-    TimerComponent
+    TimerComponent,
+    TicketBookingComponent,
+    BuilingLayoutComponent
     // Header,
     // Footer,
   ],
