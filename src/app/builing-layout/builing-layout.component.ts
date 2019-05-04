@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Floors } from '../model/building';
+import { Floor } from '../model/building';
 
 @Component({
   selector: 'app-builing-layout',
@@ -9,13 +9,16 @@ import { Floors } from '../model/building';
 export class BuilingLayoutComponent implements OnInit {
 
 
-  @Input() bluePrint:Floors[];
+  @Input() bluePrint: Floor[];
   @Output() bluePrintChange = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+  }
 
+  get columnSize() {
+    return (this.bluePrint) ? new Array(this.bluePrint[0].seatInfos.length) : [];
   }
 
 }

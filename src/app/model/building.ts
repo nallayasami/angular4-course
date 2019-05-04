@@ -1,11 +1,11 @@
 export class Building {
 }
 
-export class Floors {
+export class Floor {
     floorId: string;
     auditoriumId: string;
     auditoriumRows: AuditoriumRows;
-    seatInfo: SeatInfo[];
+    seatInfos: SeatInfo[];
 }
 
 export class AuditoriumRows {
@@ -21,5 +21,6 @@ export class SeatInfo {
     levelId: string;
     price: number;
     blockName: string;
-    empty: string;
+    empty: boolean;
+    booked: boolean
 }

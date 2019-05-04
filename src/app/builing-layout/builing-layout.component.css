@@ -1,0 +1,17 @@
+.parent-layout {
+    width: 1000px;
+    height: 750px;
+    overflow: auto;
+    background-color: lightsteelblue;
+    border: 2px black solid;
+}
+
+/* Master width */
+.column-head, .seat-row, .seat, .column-head>label {
+    width: 25px;
+}
+
+.column-head, .seat-row, .seat {
+    padding: 5px;
+    display: inline-flex;
+}

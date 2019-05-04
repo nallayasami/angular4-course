@@ -1,0 +1,3 @@
+<span *ngIf="seatInfo.seatNo != 0">
+  <i class="fa fa-folder" [ngClass]="{'seat-empty': seatInfo.empty}" (click)="onSelect()" aria-hidden="true"></i>
+</span>

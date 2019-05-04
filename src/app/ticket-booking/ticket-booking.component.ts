@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+
 
 @Component({
   selector: 'app-ticket-booking',
@@ -7,10 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TicketBookingComponent implements OnInit {
 
+  @ViewChild('textArea')
+  textArea: ElementRef;
+  
   bluePrint: any
-  constructor() { }
+  constructor(private client: HttpClient, ) { }
 
   ngOnInit() {
+    this.client.get('./assets/ticket.json')
+      .subscribe(v => {
+        this.textArea.nativeElement.textContent = JSON.stringify(v,null, 2);
+        this.bluePrint = v;
+      });
   }
 
   onLayoutChange($event) {

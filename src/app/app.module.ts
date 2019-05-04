@@ -80,6 +80,7 @@ import { SlotManagerComponent } from './slot-manager/slot-manager.component';
 import { TimerComponent } from './timer/timer.component';
 import { TicketBookingComponent } from './ticket-booking/ticket-booking.component';
 import { BuilingLayoutComponent } from './builing-layout/builing-layout.component';
+import { SeatComponent } from './seat/seat.component';
 
 
 @NgModule({
@@ -137,7 +138,8 @@ import { BuilingLayoutComponent } from './builing-layout/builing-layout.componen
     SlotManagerComponent,
     TimerComponent,
     TicketBookingComponent,
-    BuilingLayoutComponent
+    BuilingLayoutComponent,
+    SeatComponent
     // Header,
     // Footer,
   ],
