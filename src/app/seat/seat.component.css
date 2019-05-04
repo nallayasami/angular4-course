@@ -1,8 +1,8 @@
 .fa.seat-empty {
-    color: greenyellow;
+    color: black;
 }
 
 .fa {
-    color: black;
+    color: greenyellow;
     opacity: 0.5;
 }

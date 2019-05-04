@@ -9,7 +9,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor( private router: Router) { }
+  constructor(private router: Router) { }
 
   @Input() selection: CourseItem;
   @Output('onClick') onClick = new EventEmitter();
@@ -29,9 +29,8 @@ export class NavbarComponent implements OnInit {
     return CourseItem[option] === this.selection;
   }
 
-  getSelectionStr() {
-    return this.selection;
-    // return CourseItem[this.selection];
+  get selectedStr() {
+    return (this.selection ? this.selection : "Home" );
   }
 }
 
