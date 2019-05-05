@@ -79,7 +79,7 @@
         "empty": false
       }
     ],
-    "active": false
+    "active": true
   },
   {
     "id": "5ccab8c7fc2a9f13f02a3f70",
@@ -161,6 +161,14 @@
         "empty": false
       }
     ],
+    "active": true
+  },
+  {
+    "id": "emptyRow",
+    "auditoriumId": "5cca7a7d234bbb09b0ee8236",
+    "floorId": "5ccab08735e1cb3de4fb3d16",
+    "rowId": "emptyRow-row",
+    "auditoriumRows": [],
     "active": false
   },
   {
@@ -243,6 +251,88 @@
         "empty": false
       }
     ],
-    "active": false
+    "active": true
+  },
+  {
+    "id": "5ccab8c7fc2a9f13f02a3f70",
+    "auditoriumId": "5cca7a7d234bbb09b0ee8236",
+    "floorId": "5ccab08735e1cb3de4fb3d16",
+    "rowId": "5cc9a180fc2a9f37644e34d3",
+    "auditoriumRows": {
+      "success": false,
+      "message": "",
+      "id": "5cc9a180fc2a9f37644e34d3",
+      "rowName": "D",
+      "displayOrder": 1,
+      "created_at": 1556717946930,
+      "updated_at": 1556718357768,
+      "empty": false,
+      "active": false
+    },
+    "seatInfos": [
+      {
+        "seatNo": 1,
+        "levelId": "5cc98c1635e1cb3760852b92",
+        "price": 100,
+        "blockName": "Block-1",
+        "empty": false
+      },
+      {
+        "seatNo": 2,
+        "levelId": "5cc98c1635e1cb3760852b92",
+        "price": 100,
+        "blockName": "Block-1",
+        "empty": true
+      },
+      {
+        "seatNo": 3,
+        "levelId": "5cc98c1635e1cb3760852b92",
+        "price": 100,
+        "blockName": "Block-1",
+        "empty": false
+      },
+      {
+        "seatNo": 4,
+        "levelId": "5cc98c1635e1cb3760852b93",
+        "price": 50,
+        "blockName": "Block-2",
+        "empty": true
+      },
+      {
+        "seatNo": 5,
+        "levelId": "5cc98c1635e1cb3760852b93",
+        "price": 50,
+        "blockName": "Block-2",
+        "empty": true
+      },
+      {
+        "seatNo": 6,
+        "levelId": "5cc98c1635e1cb3760852b94",
+        "price": 150,
+        "blockName": "Block-3",
+        "empty": true
+      },
+      {
+        "seatNo": 0,
+        "blockName": null,
+        "empty": false
+      },
+      {
+        "seatNo": 0,
+        "blockName": null,
+        "empty": false
+      },
+      {
+        "seatNo": 0,
+        "blockName": null,
+        "empty": false
+      },
+      {
+        "seatNo": 0,
+        "blockName": null,
+        "empty": false
+      }
+    ],
+    "active": true
   }
 ]

@@ -13,11 +13,17 @@
     </div> -->
     <div *ngFor="let row of bluePrint">
       <span>
-        <label class="seat-row">{{row.auditoriumRows.rowName}}</label>
-        <span *ngFor="let seat of row.seatInfos; index as i">
-          <span class="block" *ngIf="i > 0 && row.seatInfos[i-1].blockName != seat.blockName"></span>
-          <span class="seat">
-            <app-seat [seatInfo]="seat"></app-seat>
+
+        <span class="empty-row" *ngIf="!row.active">
+
+        </span>
+        <span *ngIf="row.active">
+          <label class="seat-row">{{row.auditoriumRows.rowName}}</label>
+          <span *ngFor="let seat of row.seatInfos; index as i">
+            <span class="block" *ngIf="i > 0 && row.seatInfos[i-1].blockName != seat.blockName"></span>
+            <span class="seat">
+              <app-seat [seatInfo]="seat"></app-seat>
+            </span>
           </span>
         </span>
       </span>
