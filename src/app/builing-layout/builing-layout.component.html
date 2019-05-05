@@ -1,16 +1,24 @@
 <div class="form-group">
   <div class="parent-layout">
-    <div>
+
+    <div class="stage">
+
+      <label>Stage</label>
+    </div>
+    <!-- <div>
       <span class="column-head"></span>
       <span *ngFor="let floor of columnSize; index as i" class="column-head">
         <label>{{i+1}}</label>
       </span>
-    </div>
-    <div *ngFor="let floor of bluePrint">
+    </div> -->
+    <div *ngFor="let row of bluePrint">
       <span>
-        <label class="seat-row">{{floor.auditoriumRows.rowName}}</label>
-        <span class="seat" *ngFor="let seat of floor.seatInfos">
-          <app-seat [seatInfo]="seat"></app-seat>
+        <label class="seat-row">{{row.auditoriumRows.rowName}}</label>
+        <span *ngFor="let seat of row.seatInfos; index as i">
+          <span class="block" *ngIf="i > 0 && row.seatInfos[i-1].blockName != seat.blockName"></span>
+          <span class="seat">
+            <app-seat [seatInfo]="seat"></app-seat>
+          </span>
         </span>
       </span>
     </div>

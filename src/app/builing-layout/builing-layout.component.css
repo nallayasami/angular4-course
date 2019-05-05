@@ -15,3 +15,16 @@
     padding: 5px;
     display: inline-flex;
 }
+
+.block {
+    padding: 10px;
+}
+
+.stage {
+    border: 3px solid black;
+    padding: 5px;
+    margin: 5px;
+    width: 50%;
+    position: relative;
+    left: 25%;
+}
