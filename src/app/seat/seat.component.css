@@ -1,8 +1,14 @@
-.fa.seat-empty {
+.icon-seat {
+    background-image: url("/assets/images/seat-available.svg");
+    width: 20px;
+    height: 20px;
+}
+.fa.icon-seat.seat-empty {
+    background-image: url("/assets/images/seat.svg");
     color: black;
 }
 
-.fa {
+.fa.icon-seat {
     color: greenyellow;
     opacity: 0.5;
 }
