@@ -6,6 +6,7 @@ export class Floor {
     auditoriumId: string;
     auditoriumRows: AuditoriumRows;
     seatInfos: SeatInfo[];
+    active: boolean;
 }
 
 export class AuditoriumRows {
@@ -23,4 +24,5 @@ export class SeatInfo {
     blockName: string;
     empty: boolean;
     booked: boolean
+    eventId: string;
 }

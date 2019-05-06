@@ -11,15 +11,16 @@ export class SeatComponent implements OnInit {
   @Input() seatInfo: SeatInfo
   @Output() seatInfoChange = new EventEmitter<SeatInfo>();
 
-
   constructor() { }
 
   ngOnInit() {
   }
 
   onSelect() {
-      this.seatInfo.empty = !this.seatInfo.empty;
-      this.seatInfoChange.emit(this.seatInfo);
+    if (!!this.seatInfo.eventId) return;
+
+    this.seatInfo.empty = !this.seatInfo.empty;
+    this.seatInfoChange.emit(this.seatInfo);
   }
 
 }

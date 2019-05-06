@@ -12,71 +12,65 @@
       "displayOrder": 1,
       "created_at": 1556717946930,
       "updated_at": 1556718357768,
-      "empty": false,
+      "empty": true,
       "active": false
     },
     "seatInfos": [
       {
-        "seatNo": 1,
+        "seatNo": 0,
         "levelId": "5cc98c1635e1cb3760852b92",
         "price": 100,
         "blockName": "Block-1",
-        "empty": false
+        "empty": true
       },
       {
         "seatNo": 2,
         "levelId": "5cc98c1635e1cb3760852b92",
         "price": 100,
         "blockName": "Block-1",
-        "empty": false
+        "empty": true
       },
       {
         "seatNo": 3,
         "levelId": "5cc98c1635e1cb3760852b92",
         "price": 100,
         "blockName": "Block-1",
-        "empty": false
+        "empty": true
       },
       {
         "seatNo": 4,
         "levelId": "5cc98c1635e1cb3760852b93",
         "price": 50,
         "blockName": "Block-2",
-        "empty": false
+        "empty": true
       },
       {
         "seatNo": 5,
         "levelId": "5cc98c1635e1cb3760852b93",
         "price": 50,
         "blockName": "Block-2",
-        "empty": false
+        "empty": true
       },
       {
         "seatNo": 6,
         "levelId": "5cc98c1635e1cb3760852b94",
         "price": 150,
         "blockName": "Block-3",
-        "empty": false
+        "empty": true
+      },
+      {
+        "seatNo": 7,
+        "levelId": "5cc98c1635e1cb3760852b94",
+        "price": 150,
+        "blockName": "Block-3",
+        "empty": true
       },
       {
         "seatNo": 0,
-        "blockName": null,
-        "empty": false
-      },
-      {
-        "seatNo": 0,
-        "blockName": null,
-        "empty": false
-      },
-      {
-        "seatNo": 0,
-        "blockName": null,
-        "empty": false
-      },
-      {
-        "seatNo": 0,
-        "blockName": null,
-        "empty": false
+        "levelId": "5cc98c1635e1cb3760852b94",
+        "price": 150,
+        "blockName": "Block-3",
+        "empty": true
       }
     ],
     "active": true
@@ -94,7 +88,7 @@
       "displayOrder": 1,
       "created_at": 1556717946930,
       "updated_at": 1556718357768,
-      "empty": false,
+      "empty": true,
       "active": false
     },
     "seatInfos": [
@@ -103,62 +97,59 @@
         "levelId": "5cc98c1635e1cb3760852b92",
         "price": 100,
         "blockName": "Block-1",
-        "empty": false
+        "empty": true,
+        "eventId": "123"
       },
       {
         "seatNo": 2,
         "levelId": "5cc98c1635e1cb3760852b92",
         "price": 100,
         "blockName": "Block-1",
-        "empty": false
+        "empty": false,
+        "eventId": "1234"
       },
       {
         "seatNo": 3,
         "levelId": "5cc98c1635e1cb3760852b92",
         "price": 100,
         "blockName": "Block-1",
-        "empty": false
+        "empty": true,
+        "eventId": "12345"
       },
       {
         "seatNo": 4,
         "levelId": "5cc98c1635e1cb3760852b93",
         "price": 50,
         "blockName": "Block-2",
-        "empty": false
+        "empty": true
       },
       {
         "seatNo": 5,
         "levelId": "5cc98c1635e1cb3760852b93",
         "price": 50,
         "blockName": "Block-2",
-        "empty": false
+        "empty": true
       },
       {
         "seatNo": 6,
         "levelId": "5cc98c1635e1cb3760852b94",
         "price": 150,
         "blockName": "Block-3",
-        "empty": false
+        "empty": true
       },
       {
-        "seatNo": 0,
-        "blockName": null,
-        "empty": false
+        "seatNo": 7,
+        "levelId": "5cc98c1635e1cb3760852b94",
+        "price": 150,
+        "blockName": "Block-3",
+        "empty": true
       },
       {
-        "seatNo": 0,
-        "blockName": null,
-        "empty": false
-      },
-      {
-        "seatNo": 0,
-        "blockName": null,
-        "empty": false
-      },
-      {
-        "seatNo": 0,
-        "blockName": null,
-        "empty": false
+        "seatNo": 8,
+        "levelId": "5cc98c1635e1cb3760852b94",
+        "price": 150,
+        "blockName": "Block-3",
+        "empty": true
       }
     ],
     "active": true
@@ -184,7 +175,7 @@
       "displayOrder": 1,
       "created_at": 1556717946930,
       "updated_at": 1556718357768,
-      "empty": false,
+      "empty": true,
       "active": false
     },
     "seatInfos": [
@@ -193,7 +184,7 @@
         "levelId": "5cc98c1635e1cb3760852b92",
         "price": 100,
         "blockName": "Block-1",
-        "empty": false
+        "empty": true
       },
       {
         "seatNo": 2,
@@ -207,14 +198,14 @@
         "levelId": "5cc98c1635e1cb3760852b92",
         "price": 100,
         "blockName": "Block-1",
-        "empty": false
+        "empty": true
       },
       {
         "seatNo": 4,
         "levelId": "5cc98c1635e1cb3760852b93",
         "price": 50,
         "blockName": "Block-2",
-        "empty": true
+        "empty": false
       },
       {
         "seatNo": 5,
@@ -231,23 +222,17 @@
         "empty": true
       },
       {
-        "seatNo": 0,
-        "blockName": null,
-        "empty": false
+        "seatNo": 7,
+        "levelId": "5cc98c1635e1cb3760852b94",
+        "price": 150,
+        "blockName": "Block-3",
+        "empty": true
       },
       {
-        "seatNo": 0,
-        "blockName": null,
-        "empty": false
-      },
-      {
-        "seatNo": 0,
-        "blockName": null,
-        "empty": false
-      },
-      {
-        "seatNo": 0,
-        "blockName": null,
+        "seatNo": 8,
+        "levelId": "5cc98c1635e1cb3760852b94",
+        "price": 150,
+        "blockName": "Block-3",
         "empty": false
       }
     ],
@@ -266,16 +251,16 @@
       "displayOrder": 1,
       "created_at": 1556717946930,
       "updated_at": 1556718357768,
-      "empty": false,
+      "empty": true,
       "active": false
     },
     "seatInfos": [
       {
-        "seatNo": 1,
+        "seatNo": 0,
         "levelId": "5cc98c1635e1cb3760852b92",
         "price": 100,
         "blockName": "Block-1",
-        "empty": false
+        "empty": true
       },
       {
         "seatNo": 2,
@@ -289,21 +274,21 @@
         "levelId": "5cc98c1635e1cb3760852b92",
         "price": 100,
         "blockName": "Block-1",
-        "empty": false
+        "empty": true
       },
       {
         "seatNo": 4,
         "levelId": "5cc98c1635e1cb3760852b93",
         "price": 50,
         "blockName": "Block-2",
-        "empty": true
+        "empty": false
       },
       {
         "seatNo": 5,
         "levelId": "5cc98c1635e1cb3760852b93",
         "price": 50,
         "blockName": "Block-2",
-        "empty": true
+        "empty": false
       },
       {
         "seatNo": 6,
@@ -313,24 +298,18 @@
         "empty": true
       },
       {
-        "seatNo": 0,
-        "blockName": null,
-        "empty": false
+        "seatNo": 7,
+        "levelId": "5cc98c1635e1cb3760852b94",
+        "price": 150,
+        "blockName": "Block-3",
+        "empty": true
       },
       {
         "seatNo": 0,
-        "blockName": null,
-        "empty": false
-      },
-      {
-        "seatNo": 0,
-        "blockName": null,
-        "empty": false
-      },
-      {
-        "seatNo": 0,
-        "blockName": null,
-        "empty": false
+        "levelId": "5cc98c1635e1cb3760852b94",
+        "price": 150,
+        "blockName": "Block-3",
+        "empty": true
       }
     ],
     "active": true

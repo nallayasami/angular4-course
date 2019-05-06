@@ -3,7 +3,9 @@
 
     <div class="stage">
 
-      <label>Stage</label>
+      <label style="display: block;">Stage</label>
+      <label style="display: block;">available seats : {{availableSeats}}</label>
+      <label style="display: block;">selected Seats : {{selected}}</label>
     </div>
     <!-- <div>
       <span class="column-head"></span>
@@ -22,7 +24,7 @@
           <span *ngFor="let seat of row.seatInfos; index as i">
             <span class="block" *ngIf="i > 0 && row.seatInfos[i-1].blockName != seat.blockName"></span>
             <span class="seat">
-              <app-seat [seatInfo]="seat"></app-seat>
+              <app-seat [seatInfo]="seat" (seatInfoChange)="onChange($event)"></app-seat>
             </span>
           </span>
         </span>
