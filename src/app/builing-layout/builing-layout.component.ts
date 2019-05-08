@@ -11,7 +11,7 @@ export class BuilingLayoutComponent implements OnInit {
 
   _bluePrint: Floor[];
   @Output() bluePrintChange = new EventEmitter();
-  @Input() reservationCount;
+  @Input() reservationCount = 0;
   availableSeats: number = 0;
   selected: string[];
 
@@ -49,6 +49,7 @@ export class BuilingLayoutComponent implements OnInit {
   }
 
   onChange($event) {
+    // this.availableSeats == 0
     this.calculateAvailable();
   }
 

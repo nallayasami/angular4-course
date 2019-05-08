@@ -8,7 +8,8 @@ import { SeatInfo } from '../model/building';
 })
 export class SeatComponent implements OnInit {
 
-  @Input() seatInfo: SeatInfo
+  @Input() seatInfo: SeatInfo;
+  @Input() disabled: boolean;
   @Output() seatInfoChange = new EventEmitter<SeatInfo>();
 
   constructor() { }
@@ -17,7 +18,7 @@ export class SeatComponent implements OnInit {
   }
 
   onSelect() {
-    if (!!this.seatInfo.eventId) return;
+    if (!!this.seatInfo.eventId || (this.seatInfo.empty && this.disabled)) return;
 
     this.seatInfo.empty = !this.seatInfo.empty;
     this.seatInfoChange.emit(this.seatInfo);

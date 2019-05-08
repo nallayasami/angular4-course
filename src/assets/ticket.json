@@ -205,7 +205,7 @@
         "levelId": "5cc98c1635e1cb3760852b93",
         "price": 50,
         "blockName": "Block-2",
-        "empty": false
+        "empty": true
       },
       {
         "seatNo": 5,
@@ -233,7 +233,7 @@
         "levelId": "5cc98c1635e1cb3760852b94",
         "price": 150,
         "blockName": "Block-3",
-        "empty": false
+        "empty": true
       }
     ],
     "active": true
@@ -281,14 +281,14 @@
         "levelId": "5cc98c1635e1cb3760852b93",
         "price": 50,
         "blockName": "Block-2",
-        "empty": false
+        "empty": true
       },
       {
         "seatNo": 5,
         "levelId": "5cc98c1635e1cb3760852b93",
         "price": 50,
         "blockName": "Block-2",
-        "empty": false
+        "empty": true
       },
       {
         "seatNo": 6,

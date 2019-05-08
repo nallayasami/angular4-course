@@ -10,10 +10,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TicketBookingComponent implements OnInit {
 
-  @ViewChild('textArea')
-  textArea: ElementRef;
+  @ViewChild('textArea') textArea: ElementRef;
   
-  bluePrint: any
+  bluePrint: any;
+  seats: number = 1;
   constructor(private client: HttpClient, ) { }
 
   ngOnInit() {
@@ -22,6 +22,11 @@ export class TicketBookingComponent implements OnInit {
         this.textArea.nativeElement.textContent = JSON.stringify(v,null, 2);
         this.bluePrint = v;
       });
+
+  }
+
+  onChnge($event){
+    this.seats = $event.target.value;
   }
 
   onLayoutChange($event) {

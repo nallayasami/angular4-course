@@ -3,7 +3,11 @@
     <label for="layout">Input:</label>
     <textarea style="height: 250px;"  #textArea class="form-control" name="layout" id="layout" rows="3" (change)="onLayoutChange($event)"></textarea>
   </div>
+  <div class="form-group">
+    <label for="rows">Number of Seats:</label>
+    <input type="number" (input)="onChnge($event)" id="rows" value="1">
+  </div>
 </div>
 <div class="container">
-  <app-builing-layout [(bluePrint)]="bluePrint"></app-builing-layout>
+  <app-builing-layout [(bluePrint)]="bluePrint" [reservationCount]="seats"></app-builing-layout>
 </div>

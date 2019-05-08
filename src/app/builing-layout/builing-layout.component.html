@@ -13,16 +13,16 @@
     </div> -->
     <div *ngFor="let row of bluePrint">
       <span>
-
         <span class="empty-row" *ngIf="!row.active">
-
         </span>
         <span *ngIf="row.active">
           <label class="seat-row">{{row.auditoriumRows.rowName}}</label>
           <span *ngFor="let seat of row.seatInfos; index as i">
             <span class="block" *ngIf="i > 0 && row.seatInfos[i-1].blockName != seat.blockName"></span>
             <span class="seat">
-              <app-seat [seatInfo]="seat" (seatInfoChange)="onChange($event)"></app-seat>
+              <app-seat
+                [disabled]="reservationCount==selected.length || (reservationCount-selected.length) &gt; availableSeats"
+                [seatInfo]="seat" (seatInfoChange)="onChange($event)"></app-seat>
             </span>
           </span>
         </span>

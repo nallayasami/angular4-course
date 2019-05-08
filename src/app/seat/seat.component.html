@@ -1,4 +1,4 @@
 <span *ngIf="seatInfo.seatNo != 0">
-  <i class="fa icon-seat" [ngClass]="{'seat-blocked': !!seatInfo.eventId, 'seat-empty': seatInfo.empty}"
+  <i class="fa icon-seat" [ngClass]="{'seat-blocked': !!seatInfo.eventId || (seatInfo.empty && disabled), 'seat-empty': seatInfo.empty}"
     (click)="onSelect()" aria-hidden="true"></i>
 </span>
