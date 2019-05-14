@@ -13,4 +13,49 @@
       </a>
     </li>
   </ul>
+
+  <app-content id="container11">
+    <ng-container class="header">container 1</ng-container>
+    <ng-container class="body">
+      <app-content>
+             ...
+      </app-content>
+      <app-content>
+              ...
+      </app-content>
+      <app-content>
+              ...
+      </app-content>
+    </ng-container>
+  </app-content>
+  <app-content id="container12">
+    <ng-container class="header">container 2</ng-container>
+    <ng-container class="body">ng-content + ng-container with css selcctor</ng-container>
+  </app-content>
+  <app-content id="container13">
+    <ng-container class="header">container 3</ng-container>
+    <ng-container class="body">Sample About us to foucs</ng-container>
+  </app-content>
+  <app-content id="container1">
+    <ng-container class="header">container 1</ng-container>
+    <ng-container class="body">
+      <app-content>
+             ...
+      </app-content>
+      <app-content>
+              ...
+      </app-content>
+      <app-content>
+              ...
+      </app-content>
+    </ng-container>
+  </app-content>
+  <app-content id="container2">
+    <ng-container class="header">container 2</ng-container>
+    <ng-container class="body">ng-content + ng-container with css selcctor</ng-container>
+  </app-content>
+  <app-content id="about"> 
+    <ng-container class="header">About us</ng-container>
+    <ng-container class="body">Sample About us to foucs</ng-container>
+  </app-content>
 </form>
