@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TextAreaComponent implements OnInit {
 
-  private property: string;
+  property: string;
 
   constructor() { }
   ngOnInit() {
@@ -15,7 +15,8 @@ export class TextAreaComponent implements OnInit {
   }
 
   get summary() {
-    return this.property.split(' ').length - 1;
+    const matches = this.property.match(/[\w\d\’\'-]+/gi);
+    return matches ? matches.length : 0;
   }
 
 }

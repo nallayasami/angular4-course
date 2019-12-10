@@ -11,7 +11,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import {
-  GrowlModule, ProgressBarModule, DeferModule, DataListModule, Header,
+  GrowlModule, ProgressBarModule, DeferModule, DataListModule, Header,InputTextareaModule,
   Footer, FileUploadModule, DialogModule, ConfirmDialogModule, CalendarModule
 } from 'primeng/primeng';
 
@@ -43,7 +43,6 @@ import { PostsComponent } from './posts/posts.component';
 import { PostsService } from './posts.service';
 import { AppErrorHandler } from './common/error/app-error-handler';
 import { UserComponent } from './user/user.component';
-import { TestComponent } from './comp/test/test.component';
 import { ErrorComponent } from './common/error/error.component';
 import { FormGroupComponent } from './form-group/form-group.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -81,6 +80,7 @@ import { TimerComponent } from './timer/timer.component';
 import { TicketBookingComponent } from './ticket-booking/ticket-booking.component';
 import { BuilingLayoutComponent } from './builing-layout/builing-layout.component';
 import { SeatComponent } from './seat/seat.component';
+import { TextAreaComponent } from './component/text-area/text-area.component';
 
 
 @NgModule({
@@ -111,7 +111,6 @@ import { SeatComponent } from './seat/seat.component';
     FormBuilderComponent,
     PostsComponent,
     UserComponent,
-    TestComponent,
     ErrorComponent,
     FormGroupComponent,
     NotFoundComponent,
@@ -139,7 +138,9 @@ import { SeatComponent } from './seat/seat.component';
     TimerComponent,
     TicketBookingComponent,
     BuilingLayoutComponent,
-    SeatComponent
+    SeatComponent,
+    TextAreaComponent,
+    
     // Header,
     // Footer,
   ],
@@ -159,7 +160,8 @@ import { SeatComponent } from './seat/seat.component';
     FileUploadModule,
     DialogModule,
     ConfirmDialogModule,
-    CalendarModule
+    CalendarModule,
+    InputTextareaModule
   ],
   providers: [
     CoursesServcie,

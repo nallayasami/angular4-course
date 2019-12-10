@@ -1,3 +1,4 @@
+import { TextAreaComponent } from './component/text-area/text-area.component';
 export enum CourseItem {
     Binding = 1,
     Pipes = 2,
@@ -13,4 +14,5 @@ export enum CourseItem {
     DialogComponent = 12,
     SlotManager = 13,
     TicketBooking = 15,
+    WordCounter = 16,
 }
