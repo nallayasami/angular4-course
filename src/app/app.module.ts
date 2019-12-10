@@ -73,7 +73,7 @@ import { SearchComponent } from './search/search.component';
 import { GithubSearchComponent } from './github-search/github-search.component';
 import { GithubUserComponent } from './github-user/github-user.component';
 import { PaymentGetwayComponent } from './payment-getway/payment-getway.component';
-import { DialogComponent } from './components/dialog/dialog.component';
+import { DialogComponent } from './component/dialog/dialog.component';
 import { PrimeDialogComponent } from './prime-dialog/prime-dialog.component';
 import { RedirectComponent } from './redirect/redirect.component';
 import { SlotManagerComponent } from './slot-manager/slot-manager.component';
