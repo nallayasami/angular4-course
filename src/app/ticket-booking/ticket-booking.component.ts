@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TicketBookingComponent implements OnInit {
 
-  @ViewChild('textArea') textArea: ElementRef;
+  @ViewChild('textArea', { static: true }) textArea: ElementRef;
   
   bluePrint: any;
   seats: number = 1;

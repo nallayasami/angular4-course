@@ -1,7 +1,6 @@
-import { CarService, Car } from './../prime-defer/car.service';
+import { Car } from './../prime-defer/car.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { Validators } from '@angular/forms/src/validators';
+
 
 @Component({
   selector: 'app-card-component',

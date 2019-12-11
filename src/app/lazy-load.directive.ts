@@ -13,7 +13,7 @@ export class LazyLoadDirective implements OnDestroy, AfterViewInit {
   private view: EmbeddedViewRef<any>;
   private documentScrollListener: Function;
   private documentResizeListener: Function;
-  @ContentChild(TemplateRef) private template: TemplateRef<any>;
+  @ContentChild(TemplateRef, {static: false}) private template: TemplateRef<any>;
 
   constructor(
     private el: ElementRef,

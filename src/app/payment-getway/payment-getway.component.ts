@@ -6,7 +6,7 @@ import { Component, OnInit, AfterViewChecked, AfterViewInit, ViewChild, ElementR
   styleUrls: ['./payment-getway.component.css']
 })
 export class PaymentGetwayComponent implements OnInit, AfterViewInit, OnChanges {
-  @ViewChild('paymentForm') paymentForm: ElementRef;
+  @ViewChild('paymentForm', { static: true }) paymentForm: ElementRef;
   @Input() amount: number;
 
   constructor() {

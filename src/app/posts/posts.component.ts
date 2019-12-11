@@ -37,7 +37,7 @@ export class PostsComponent implements OnInit {
 
     input.value = '';
 
-    this.service.add(post).subscribe(response => post.id = response.id,
+    this.service.add(post).subscribe(response => post.id = response['id'],
       (error: BaseError) => {
         this.posts.splice(0, 1);
         if (error instanceof BadRequsetError) {

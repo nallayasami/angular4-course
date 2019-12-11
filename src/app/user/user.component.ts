@@ -15,7 +15,7 @@ export class UserComponent implements OnInit, OnDestroy {
   users: Array<any>;
   aboutSubscription: Subscription;
 
-  @ViewChild('about') about: ElementRef;
+  @ViewChild('about', { static: true }) about: ElementRef;
   addPost(input: HTMLElement) {
 
   }
@@ -32,7 +32,7 @@ export class UserComponent implements OnInit, OnDestroy {
   focusToFragment(): void {
     const fragment = this.route.snapshot.fragment;
     console.log('fragment:', fragment);
-    if ("about" == fragment) {
+    if ('about' === fragment) {
       this.about.nativeElement.scrollIntoView();
     }
   }
